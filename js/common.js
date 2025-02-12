@@ -21,11 +21,6 @@ export function common() {
     header_menuBtn.style.opacity = 1;
   });
 
-  // scroll
-  $(window).scroll(function () {
-    $(this).scrollTop();
-  });
-
   // 커스텀 커서 
   const cursor = document.getElementById("custom_cursor");
   //   const box = document.querySelector(".txt_box");
@@ -33,7 +28,7 @@ export function common() {
   window.addEventListener("mousemove", function (e) {
     let cursorX = e.clientX;
     let cursorY = e.clientY;
-    console.log('object')
+
     setTimeout(() => {
       cursor.style.left = cursorX + "px";
       cursor.style.top = cursorY + "px";

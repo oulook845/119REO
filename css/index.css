@@ -40,6 +40,7 @@ main #con1_3r {
 main #con1_3r ul.bg_img {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
@@ -47,7 +48,6 @@ main #con1_3r ul.bg_img {
 main #con1_3r ul.bg_img li {
   width: 100%;
   height: 100%;
-  display: none;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -55,10 +55,11 @@ main #con1_3r ul.bg_img li {
   position: absolute;
   left: 0;
   top: 0;
-  transition: 2s;
+  transform: scale(130%);
+  transition: transform 5s ease-in-out;
 }
 main #con1_3r ul.bg_img li.on {
-  display: block;
+  transform: scale(100%);
 }
 main #con1_3r ul.bg_img li:nth-child(1) {
   background-image: url(../images/index/con1_3r_rememberBg.png);
