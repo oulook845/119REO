@@ -1,0 +1,116 @@
+main {
+  #visual {
+    height: 100vh;
+    position: relative;
+    padding: 0 11.11111111111111vh; /* 120px */
+    video.visual_bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    div.intro_txt {
+      color: #fff;
+      position: absolute;
+      left: 0;
+      top: 41.11111111111111vh; /* 444px */
+      h2 {
+        font-family: "JalnanGothic";
+        font-size: 2.7777777777777777vh; /* 30px */
+      }
+      p {
+        margin-top: 5.555555555555555vh; /* 60px */
+        span {
+          display: block;
+          font-size: 2.7777777777777777vh; /* 30px */
+          line-height: 4.62962962962963vh; /* 50px */
+          color: #777;
+          margin-top: 2.7777777777777777vh; /* 30px */
+        }
+      }
+    }
+  }
+  #con1_3r {
+    width: 100%;
+    height: 100vh;
+    ul.bg_img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      li {
+        width: 100%;
+        height: 100%;
+        display: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition:2s;
+        &.on{
+            display: block;
+        }
+        &:nth-child(1) {
+            background-image: url(../images/index/con1_3r_rememberBg.png);
+            opacity: 1;
+        }
+        &:nth-child(2) {
+          background-image: url(../images/index/con1_3r_rememberBg.png);
+        }
+        &:nth-child(3) {
+          background-image: url(../images/index/con1_3r_rememberBg.png);
+        }
+      }
+    }
+    .inner {
+      .desc_wrap {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 9;
+        ul.desc_list{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position:absolute;
+            li{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                &.on{
+                    h3{
+                        font-family: "JalnanGothic";
+                        color: #fff;
+                    }
+                    p{
+                        opacity: 1;
+                    }
+                }
+                h3{
+                    font-weight: 900;
+                    font-size: 40px;
+                    color: rgba(255,255,255, .7);
+                }
+                p{
+                    font-size: 20px;
+                    line-height: 35px;
+                    margin-top: 30px;
+                    color:#fff;
+                    opacity: 0;
+                }
+            }
+        }
+      }
+    }
+  }
+}

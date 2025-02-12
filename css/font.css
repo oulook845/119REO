@@ -1,0 +1,10 @@
+/* 나눔스퀘어 NanumSquare */
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+/* 여기어때 잘난체 JalnanGothic */
+@font-face {
+  font-family: "JalnanGothic";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
