@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>119REO</title>
     <link rel="stylesheet" href="./css/import.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- sciprt -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <!-- jQuery 3.7.1 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
   </head>
   <body>
     <span id="custom_cursor"></span>
@@ -49,30 +57,41 @@
         </div>
       </section>
 
-      <section id="con1_3r">
-        <ul class="bg_img">
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+      <section id="con1_3r" class="cursor_area">
+        <div class="bg_img swiper">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"></li>
+            <li class="swiper-slide"></li>
+            <li class="swiper-slide"></li>
+          </ul>
+        </div>
+
+        <!-- con1_3r bg_img swiper script -->
+        <!-- <script>
+          var con1_bg_img = new Swiper("#con1_3r .bg_img", {
+            effect : "fade",
+            // autoplay : true,
+          });
+        </script> -->
+
         <div class="inner">
-          <div class="desc_wrap">
-            <ul class="desc_list">
-              <li>
+          <div class="desc_swiper swiper">
+            <ul class="desc_list swiper-wrapper">
+              <li class="swiper-slide">
                 <h3>RECYCLE</h3>
                 <p>
                   생명을 구한 소중한 기억이 담긴 방화복은 세탁을 거칩니다.<br />이 과정에서 화재 현장의 그을음과
                   잔재들은 대부분 제거되지만<br />기억의 일부 흔적은 남겨집니다.
                 </p>
               </li>
-              <li class="on">
+              <li class="swiper-slide">
                 <h3>REMEMBER</h3>
                 <p>
                   생명을 구한 소중한 기억이 담긴 방화복은 세탁을 거칩니다.<br />이 과정에서 화재 현장의 그을음과
                   잔재들은 대부분 제거되지만<br />기억의 일부 흔적은 남겨집니다.
                 </p>
               </li>
-              <li>
+              <li class="swiper-slide">
                 <h3>RESCUE</h3>
                 <p>
                   생명을 구한 소중한 기억이 담긴 방화복은 세탁을 거칩니다.<br />이 과정에서 화재 현장의 그을음과
@@ -81,6 +100,12 @@
               </li>
             </ul>
           </div>
+
+          <!-- con1_3r descList swiper script -->
+          <script>
+            var con1_descList = new Swiper("#con1_3r .desc_wrap", {});
+          </script>
+
           <span class="blur_light"></span>
         </div>
       </section>
@@ -95,9 +120,27 @@
     </main>
     <footer id="footer"></footer>
 
-    <!-- script -->
-    <script src="./js/jquery-3.7.1.min.js"></script> <!-- jQuery 3.7.1 -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.min.js"></script> <!-- lenis cdn -->
+    <!--######## script ########-->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+    <!-- lenis cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <!-- GSAP CDN -->
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        smooth: true,
+        smoothTouch: false,
+      });
+      // Lenis 애니메이션 프레임 처리
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
     <script type="module" src="./js/import.js"></script>
     <script src="./js/index.js"></script>
   </body>

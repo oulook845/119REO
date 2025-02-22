@@ -37,75 +37,79 @@ main #con1_3r {
   width: 100%;
   height: 100vh;
 }
-main #con1_3r ul.bg_img {
+main #con1_3r .bg_img {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
-main #con1_3r ul.bg_img li {
+main #con1_3r .bg_img ul li {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  opacity: 0;
   position: absolute;
   left: 0;
   top: 0;
   transform: scale(130%);
   transition: transform 5s ease-in-out;
 }
-main #con1_3r ul.bg_img li.on {
+main #con1_3r .bg_img ul li.on {
   transform: scale(100%);
 }
-main #con1_3r ul.bg_img li:nth-child(1) {
-  background-image: url(../images/index/con1_3r_rememberBg.png);
-  opacity: 1;
-}
-main #con1_3r ul.bg_img li:nth-child(2) {
+main #con1_3r .bg_img ul li:nth-child(1) {
   background-image: url(../images/index/con1_3r_rememberBg.png);
 }
-main #con1_3r ul.bg_img li:nth-child(3) {
+main #con1_3r .bg_img ul li:nth-child(2) {
   background-image: url(../images/index/con1_3r_rememberBg.png);
 }
-main #con1_3r .inner .desc_wrap {
+main #con1_3r .bg_img ul li:nth-child(3) {
+  background-image: url(../images/index/con1_3r_rememberBg.png);
+}
+main #con1_3r .inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+main #con1_3r .inner .desc_swiper {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 9;
 }
-main #con1_3r .inner .desc_wrap ul.desc_list {
+main #con1_3r .inner .desc_swiper ul.desc_list {
   width: 100%;
   height: 100%;
   display: flex;
   position: absolute;
 }
-main #con1_3r .inner .desc_wrap ul.desc_list li {
+main #con1_3r .inner .desc_swiper ul.desc_list li {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
-main #con1_3r .inner .desc_wrap ul.desc_list li.on h3 {
+main #con1_3r .inner .desc_swiper ul.desc_list li.on h3 {
   font-family: "JalnanGothic";
+  font-size: 60px;
+  line-height: 60px;
   color: #fff;
 }
-main #con1_3r .inner .desc_wrap ul.desc_list li.on p {
+main #con1_3r .inner .desc_swiper ul.desc_list li.on p {
   opacity: 1;
 }
-main #con1_3r .inner .desc_wrap ul.desc_list li h3 {
+main #con1_3r .inner .desc_swiper ul.desc_list li h3 {
   font-weight: 900;
   font-size: 40px;
   color: rgba(255, 255, 255, 0.7);
 }
-main #con1_3r .inner .desc_wrap ul.desc_list li p {
-  font-size: 20px;
-  line-height: 35px;
+main #con1_3r .inner .desc_swiper ul.desc_list li p {
+  width: fit-content; /* 560px */
+  font-size: 18px; /* 0.9375vw */
+  line-height: 35px; /* 1.8229166666666667vw */
+  margin: 0 auto;
   margin-top: 30px;
   color: #fff;
-  opacity: 0;
 }

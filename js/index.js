@@ -1,20 +1,38 @@
-// scroll
+// read.me //
+// ■ content 추가시 elements에 배열 추가
 
-const scroll_gap = 400;
-const visual = $("#visual").offset().top;
-const con1_r3Top = $("#con1_3r").offset().top - scroll_gap;
-const con2_shopTop = $("#con2_shop").offset().top - scroll_gap;
-const con3_mFlimTop = $("#con3_makingFilm").offset().top - scroll_gap;
+// 전역 변수로 conditions와 executionStates 정의
+const conditions = [];
+const executionStates = {};
+const scroll_gap = 250;
 
-$(window).scroll(function () {
-  let current_top = Math.floor($(this).scrollTop());
+$(document).ready(function () {
+  const elements = ["visual", "con1_3r", "con2_shop", "con3_makingFilm"];
 
-  if (current_top > con1_r3Top && current_top > 0) {
-    console.log("con1");
-    $("#con1_3r .bg_img li").eq(0).addClass("on");
-  } else if (current_top > con2_shopTop && current_top > 0) {
-    console.log("con2");
-  } else if (current_top > con3_mFlimTop && current_top > 0) {
-    console.log("con3");
-  }
+  elements.forEach((element, index) => {
+    const offsetTop = $(`#${element}`).offset().top;
+    window[`${element}_offsetTop`] = offsetTop;
+
+    // conditions 배열에 새 객체 추가
+    conditions.push({
+      name: element,
+      threshold: offsetTop - scroll_gap,
+    });
+
+    // executionStates 객체에 초기 상태 설정
+    executionStates[element] = false;
+  });
+
+  // 스크롤 이벤트 핸들러
+  $(window).scroll(function () {
+    let current_top = Math.floor($(this).scrollTop());
+
+    conditions.forEach((condition) => {
+      if (current_top > condition.threshold && !executionStates[condition.name]) {
+        console.log(condition.name);
+        executionStates[condition.name] = true;
+      }
+    });
+  });
+  
 });

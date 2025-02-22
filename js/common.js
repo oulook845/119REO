@@ -21,10 +21,12 @@ export function common() {
     header_menuBtn.style.opacity = 1;
   });
 
-  // 커스텀 커서 
-  const cursor = document.getElementById("custom_cursor");
-  //   const box = document.querySelector(".txt_box");
+  //footer
 
+  // 커스텀 커서
+  const cursor = document.getElementById("custom_cursor");
+  const boxs = document.querySelectorAll(".cursor_area");
+  
   window.addEventListener("mousemove", function (e) {
     let cursorX = e.clientX;
     let cursorY = e.clientY;
@@ -34,10 +36,14 @@ export function common() {
       cursor.style.top = cursorY + "px";
     }, 120);
   });
-  //   box.addEventListener("mouseenter",function(){
-  //     cursor.style.padding = "calc(200px / 2)";
-  //   })
-  //   box.addEventListener("mouseleave",function(){
-  //     cursor.style.padding = "calc(100px / 2)";
-  //   })
+  boxs.forEach((box) => {
+    box.addEventListener("mouseenter", function () {
+      cursor.style.padding = "calc(200px / 2)";
+      cursor.style.opacity = "1";
+    });
+    box.addEventListener("mouseleave", function () {
+      cursor.style.padding = "0";
+      cursor.style.opacity = "0";
+    });
+  });
 }

@@ -26,19 +26,22 @@
 
 /* 커스텀 커서 custom cursor */
 #custom_cursor {
-  padding:calc(120px / 2);
+  /* padding:calc(120px / 2); */
   display: block;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
+  background: radial-gradient(circle, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.3));
   pointer-events: none;
   user-select: none;
   mix-blend-mode: overlay;
-  filter: blur(15px);
+  filter: blur(10px);
   position: fixed;
   left: 0;
   top: 0;
   transform: translate(-50%, -50%);
   z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+  transition: padding 0.5s ease-out;
 }
 
 .inner {
