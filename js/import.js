@@ -1,4 +1,5 @@
 import { common } from "./common.js";
+import { index } from "./index.js";
 
 // lenis 적용
 const lenis = new Lenis({
@@ -16,3 +17,4 @@ requestAnimationFrame(raf);
 
 // js import
 common();
+index();
