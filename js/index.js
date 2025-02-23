@@ -55,6 +55,16 @@ export function index() {
     // });
 
     /* ########################### */
+    /* #con2_shop script */
+    /* ########################### */
+    const con2Shop = document.getElementById("con2_shop");
+    const con2Shop_ctgList = con2Shop.querySelector(".product_list");
+    let shopList_height = con2Shop_ctgList.clientHeight;
+    console.log(shopList_height);
+    console.log(con2Shop);
+    con2Shop.style.height = `${shopList_height}px`;
+
+    /* ########################### */
     /* #con3_makingFilm video script */
     /* ########################### */
     const video_sect = document.getElementById("con3_makingFilm");
@@ -65,7 +75,7 @@ export function index() {
 
     // 비디오 메타데이터 로드 후 높이 계산
     function setVideoHeight() {
-      const heightPerSecond = 3800;
+      const heightPerSecond = 3000;
       video_sect_height = video.duration * heightPerSecond;
       const extraHeight = window.innerHeight;
       video_sect.style.height = `${video_sect_height + extraHeight}px`;

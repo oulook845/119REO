@@ -132,9 +132,6 @@ main #con1_3r .inner .desc_swiper ul.desc_list li p {
   margin-top: 30px;
   color: #fff;
 }
-main #con2_shop {
-  height: 200vh;
-}
 main #con2_shop .inner {
   width: 87.5vw; /* 1680px */
   color: #fff;
