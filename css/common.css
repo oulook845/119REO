@@ -130,3 +130,9 @@ section {
   position: relative;
   background: #111;
 }
+
+footer#footer {
+  width: 100%;
+  height: 300px;
+  background: #111;
+}

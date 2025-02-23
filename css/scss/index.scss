@@ -44,15 +44,15 @@ main {
       width: 100%;
       height: 100%;
       position: relative;
-      &::before{
-        content:"";
-        width:100%;
+      &::before {
+        content: "";
+        width: 100%;
         height: 100%;
-        position:absolute;
-        left:0;
-        top:0;
+        position: absolute;
+        left: 0;
+        top: 0;
         z-index: 9;
-        background: radial-gradient(circle, rgba(85,85,85,1) 0%, rgba(0, 0, 0, 1) 100%);
+        background: radial-gradient(circle, rgba(85, 85, 85, 1) 0%, rgba(0, 0, 0, 1) 100%);
         opacity: 0.7;
       }
 
@@ -139,34 +139,120 @@ main {
 
   /* #con2_shop ****************/
   #con2_shop {
+    height: 200vh;
+    .inner {
+      width: 87.5vw; /* 1680px */
+      color: #fff;
+      .product_wrap {
+        width: 42.188vw; /* 810px */
+        position: absolute;
+        right: 0;
+        top: 30px;
+        ul.product_list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.521vw; /* 10px */
+          li {
+            width: calc((42.188vw - 0.521vw) / 2); /* 400px */
+            height: calc((42.188vw - 0.521vw) / 2); /* 400px */
+            position: relative;
+            &::after {
+              content: "";
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              left: 0;
+              top: 0;
+              background: rgba(34, 34, 34, 0.5);
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+      .txt_wrap {
+        width: 100%;
+        height: 100vh;
+        position: sticky;
+        left: 0;
+        top: 0;
+        z-index: 9;
+        .desc_wrap {
+          width: 100%;
+          height: 51.111vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: absolute;
+          left: 0;
+          top: 39.259vh;
+          .desc_kor {
+            font-size: 20px;
+            color: #777777;
+          }
+          .desc_eng {
+            font-size: 18px;
+            text-align: right;
+          }
+        }
+        .shop_category {
+          position: absolute;
+          left: 0;
+          top: 74vh;
+          .shopCtg_wrap {
+            height: 45px;
+            font-size: 35px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #fff;
+            ul.shopCtg_list {
+              position: absolute;
+            }
+          }
+          h2 {
+            font-size: 80px;
+            font-family: "JalnanGothic";
+          }
+        }
+      }
+    }
   }
 
   /* #con3_makingFilm ****************/
   #con3_makingFilm {
-    #bound-one {
-      width: 100%;
-      height: 100vh;
-      background: #111;
-      margin: 0 auto;
-      position: sticky; /* 미리 sticky 설정 */
-      top: 0; /* 화면 상단에 고정 */
-      &::before {
-        content: "";
-        display: block;
+    .inner {
+      #bound-one {
         width: 100%;
-        height: 150px;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, rgba(17, 17, 17, 1) 100%);
-
-        position: absolute;
+        height: 100vh;
+        background: #111;
+        margin: 0 auto;
+        flex-direction: row-reverse;
+        position: sticky; /* 미리 sticky 설정 */
+        top: 0; /* 화면 상단에 고정 */
         left: 0;
-        top: 0;
-      }
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center bottom;
-        transition: opacity 0.75s;
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 150px;
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, rgba(17, 17, 17, 1) 100%);
+
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center bottom;
+          transition: opacity 0.75s;
+        }
       }
     }
   }

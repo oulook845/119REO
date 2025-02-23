@@ -36,6 +36,7 @@ export function common() {
       cursor.style.top = cursorY + "px";
     }, 120);
   });
+  
   boxs.forEach((box) => {
     box.addEventListener("mouseenter", function () {
       cursor.style.padding = "calc(200px / 2)";
