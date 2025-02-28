@@ -56,41 +56,34 @@ export function index() {
     /* ########################### */
     /* #visual script */
     /* ########################### */
-
-    const visaulZoom = gsap.timeline();
-    visaulZoom.to("#visual .visual_title", {
-      // fontSize: "2.7777777777777777vh",
+    const visual = document.querySelector("#visual");
+    const visualTitle = visual.querySelector(".visual_title");
+    const visualDescSpans = visual.querySelectorAll(".visual_desc span");
+    
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: visual,
+        start: "top top",
+        end: "+=200%", // 애니메이션 지속 시간 조절
+        scrub: true,
+        pin: true,
+        markers: true
+      }
+    });
+    
+    tl.to(visualTitle, {
       fontSize: 30,
-      duration: 1,
       margin: 0,
+      duration: 3
     });
-    ScrollTrigger.create({
-      animation: visaulZoom,
-      trigger: "#visual",
-      start: "top top",
-      end: "+1200",
-      anticipatePin: 1,
-      pin: true,
-      scrub: true,
-      repeat: 0,
-      yoyo: true,
-      markers: true,
-    });
-    // const visualDesc = gsap.timeline();
-    // visualDesc.to("#visual .visual_desc", {});
-    const visualDesc = gsap.utils.toArray("#visual .visual_desc span");
-    visualDesc.forEach((text) => {
-      gsap.to(text, {
+    
+    visualDescSpans.forEach((span, index) => {
+      tl.to(span, {
         backgroundSize: "100%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: text,
-          start: "center 90%",
-          end: "center 30%",
-          scrub: true,
-        },
+        duration: 2,
       });
     });
+    
 
     /* ########################### */
     /* #con2_shop script */
