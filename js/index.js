@@ -64,7 +64,7 @@ export function index() {
       scrollTrigger: {
         trigger: visual,
         start: "top top",
-        end: "+=200%", // 애니메이션 지속 시간 조절
+        end: "+=500%", // 애니메이션 지속 시간 조절
         scrub: true,
         pin: true,
         markers: true
@@ -83,7 +83,7 @@ export function index() {
         duration: 2,
       });
     });
-    
+    tl.to({}, {duration: 2});
 
     /* ########################### */
     /* #con2_shop script */
