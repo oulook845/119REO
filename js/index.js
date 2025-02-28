@@ -74,7 +74,8 @@ export function index() {
     tl.to(visualTitle, {
       fontSize: 30,
       margin: 0,
-      duration: 3
+      duration: 3,
+      ease: "power1.inOut" /* 선형에 가까운 부드러운 효과 */
     });
     
     visualDescSpans.forEach((span, index) => {
