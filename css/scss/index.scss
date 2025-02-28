@@ -4,6 +4,7 @@ main {
     height: 100vh;
     position: relative;
     padding: 0 11.11111111111111vh; /* 120px */
+    overflow: hidden;
     video.visual_bg {
       width: 100%;
       height: 100%;
@@ -15,22 +16,37 @@ main {
       top: 0;
     }
     div.intro_txt {
+      width: 100%;
       color: #fff;
       position: absolute;
       left: 0;
       top: 41.11111111111111vh; /* 444px */
-      h2 {
+      h2.visual_title {
+        width: fit-content;
         font-family: "JalnanGothic";
-        font-size: 2.7777777777777777vh; /* 30px */
+        // font-size: 2.7777777777777777vh; /* 30px */
+        font-size: 37.037vh; /* 400px 37.0370vh */
+        margin-left: auto; /* 400px */
+        margin-top: 27.7778vh; /* 300px */
+        transform: translateX(10%);
       }
       p {
         margin-top: 5.555555555555555vh; /* 60px */
+        // color: #777;
+        color: rgba(255,255,255,.2);
         span {
           display: block;
           font-size: 2.7777777777777777vh; /* 30px */
           line-height: 4.62962962962963vh; /* 50px */
-          color: #777;
           margin-top: 2.7777777777777777vh; /* 30px */
+
+          position: relative;
+          width: max-content;
+          background: linear-gradient(to right, #fff, #fff) no-repeat;
+          -webkit-background-clip: text;
+          background-clip: text;
+          background-size: 0%;
+          transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
         }
       }
     }
@@ -40,10 +56,15 @@ main {
   #con1_3r {
     width: 100%;
     height: 100vh;
+    &.on .bg_img .swiper-slide {
+      transform: scale(100%);
+    }
     .bg_img {
       width: 100%;
       height: 100%;
-      position: relative;
+      position: absolute;
+      left: 0;
+      top: 0;
       &::before {
         content: "";
         width: 100%;
@@ -52,8 +73,8 @@ main {
         left: 0;
         top: 0;
         z-index: 9;
-        background: radial-gradient(circle, rgba(85, 85, 85, 1) 0%, rgba(0, 0, 0, 1) 100%);
-        opacity: 0.7;
+        background: radial-gradient(circle, #555 0%, #000 50%);
+        opacity: 0.5;
       }
 
       ul {
@@ -67,10 +88,7 @@ main {
           left: 0;
           top: 0;
           transform: scale(130%);
-          transition: transform 5s ease-in-out;
-          &.on {
-            transform: scale(100%);
-          }
+          transition: transform 3s ease-in-out;
           &:nth-child(1) {
             background-image: url(../images/index/con1_3r_rememberBg.png);
           }
@@ -86,9 +104,6 @@ main {
     .inner {
       width: 100%;
       height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
       .desc_swiper {
         width: 100%;
         height: 100%;
@@ -145,7 +160,7 @@ main {
       .product_wrap {
         width: 42.188vw; /* 810px */
         position: absolute;
-        right: 0;
+        right: 2.7778vw; /* 45px */
         top: 30px;
         ul.product_list {
           display: flex;
@@ -155,6 +170,10 @@ main {
             width: calc((42.188vw - 0.521vw) / 2); /* 400px */
             height: calc((42.188vw - 0.521vw) / 2); /* 400px */
             position: relative;
+            &:hover::after {
+              transition: opacity 0.75s;
+              opacity: 0;
+            }
             &::after {
               content: "";
               display: block;
@@ -180,6 +199,8 @@ main {
         left: 0;
         top: 0;
         z-index: 9;
+        user-select: none;
+        pointer-events: none;
         .desc_wrap {
           width: 100%;
           height: 51.111vh;
@@ -191,10 +212,12 @@ main {
           top: 39.259vh;
           .desc_kor {
             font-size: 20px;
+            line-height: 2.25; /* 45px */
             color: #777777;
           }
           .desc_eng {
             font-size: 18px;
+            line-height: 1.75; /* 30px */
             text-align: right;
           }
         }
@@ -203,14 +226,17 @@ main {
           left: 0;
           top: 74vh;
           .shopCtg_wrap {
+            width: 250px;
             height: 45px;
             font-size: 35px;
             font-weight: bold;
             position: relative;
             overflow: hidden;
-            border: 1px solid #fff;
+            // border: 1px solid #fff;
             ul.shopCtg_list {
               position: absolute;
+              left: 0;
+              top: 0;
             }
           }
           h2 {

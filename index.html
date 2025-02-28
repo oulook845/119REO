@@ -16,9 +16,10 @@
   </head>
   <body>
     <span id="custom_cursor"></span>
+    <div id="topBtn" role="button"></div>
     <header id="header">
       <h1 id="logo">
-        <a href="#"><img src="./images/logo.png" alt="로고" /></a>
+        <a href="#"><img src="./images/common/logo.png" alt="로고" /></a>
       </h1>
       <nav id="gnb">
         <ul class="menu">
@@ -40,8 +41,8 @@
         <video class="visual_bg" src="./video/main/main_visual_spaceBg.mp4" autoplay muted loop></video>
         <div class="inner">
           <div class="intro_txt">
-            <h2>119REO</h2>
-            <p>
+            <h2 class="visual_title">119REO</h2>
+            <p class="visual_desc">
               <span>The 119REO product's birth journey begins with the fire department.</span>
               <span
                 >The collected fire suits are cleaned through washing,<br />
@@ -162,7 +163,7 @@
       <section id="con3_makingFilm">
         <div class="inner">
           <div id="bound-one">
-            <video preload="metadata" src="./video/main/main_makingFilm2.mp4"></video>
+            <video preload="metadata" muted src="./video/main/main_makingFilm.mp4"></video>
           </div>
         </div>
       </section>
@@ -190,6 +191,8 @@
     </script>
     <!-- GSAP CDN -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <!-- GSAP scrollTrigger CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
     <script type="module" src="./js/import.js"></script>
   </body>

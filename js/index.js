@@ -27,42 +27,93 @@ export function index() {
     });
 
     // 스크롤 이벤트 핸들러
-    // $(window).scroll(function () {
-    //   let current_top = Math.floor($(this).scrollTop());
+    $(window).scroll(function () {
+      let current_top = Math.floor($(this).scrollTop());
 
-    //   // conditions 배열에 있는 요소의 위치와 비교
-    //   conditions.forEach((condition, idx) => {
-    //     if (current_top > condition.threshold && !executionStates[condition.name]) {
-    //       executionStates[condition.name] = true;
-    //       switch (condition.name){
-    //         case "visual" :
-    //           console.log(`${condition.name} : ${idx}`)
-    //           break;
-    //         case "con1_3r" :
-    //           console.log(`${condition.name} : ${idx}`)
-    //           break;
-    //         case "con2_shop" :
-    //           console.log(`${condition.name} : ${idx}`)
-    //           break;
-    //         case "con3_makingFilm" :
-    //           console.log(`${condition.name} : ${idx}`)
-    //           updateVideoPlayback();
-    //           break;
-    //         default : return;
-    //       }
-    //     }
-    //   });
-    // });
+      // conditions 배열에 있는 요소의 위치와 비교
+      conditions.forEach((condition, idx) => {
+        if (current_top > condition.threshold && !executionStates[condition.name]) {
+          executionStates[condition.name] = true;
+          switch (condition.name) {
+            case "visual":
+              break;
+            case "con1_3r":
+              $("#con1_3r").addClass("on");
+              break;
+            case "con2_shop":
+              setInterval(con2Ctg_ani, 3000);
+              break;
+            case "con3_makingFilm":
+              requestAnimationFrame(updateVideoPlayback);
+              break;
+            default:
+              return;
+          }
+        }
+      });
+    });
+
+    /* ########################### */
+    /* #visual script */
+    /* ########################### */
+
+    const visaulZoom = gsap.timeline();
+    visaulZoom.to("#visual .visual_title", {
+      // fontSize: "2.7777777777777777vh",
+      fontSize: 30,
+      duration: 1,
+      margin: 0,
+    });
+    ScrollTrigger.create({
+      animation: visaulZoom,
+      trigger: "#visual",
+      start: "top top",
+      end: "+1200",
+      anticipatePin: 1,
+      pin: true,
+      scrub: true,
+      repeat: 0,
+      yoyo: true,
+      markers: true,
+    });
+    // const visualDesc = gsap.timeline();
+    // visualDesc.to("#visual .visual_desc", {});
+    const visualDesc = gsap.utils.toArray("#visual .visual_desc span");
+    visualDesc.forEach((text) => {
+      gsap.to(text, {
+        backgroundSize: "100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: text,
+          start: "center 90%",
+          end: "center 30%",
+          scrub: true,
+        },
+      });
+    });
 
     /* ########################### */
     /* #con2_shop script */
     /* ########################### */
     const con2Shop = document.getElementById("con2_shop");
-    const con2Shop_ctgList = con2Shop.querySelector(".product_list");
-    let shopList_height = con2Shop_ctgList.clientHeight;
-    console.log(shopList_height);
-    console.log(con2Shop);
+    const con2Shop_prodList = con2Shop.querySelector(".product_list");
+    const con2Shop_ctgList = con2Shop.querySelector(".shopCtg_list");
+    const con2Shop_ctgListItem = con2Shop.querySelectorAll(".shopCtg_list li");
+
+    /* sticky를 위해 product 높이를 받아서 con2에게 전달 */
+    let shopList_height = con2Shop_prodList.clientHeight;
     con2Shop.style.height = `${shopList_height}px`;
+
+    let ctdList_height = con2Shop_ctgListItem[0].clientHeight;
+
+    function con2Ctg_ani() {
+      $(".shopCtg_list")
+        .stop()
+        .animate({ top: `-${ctdList_height}px` }, 1000, function () {
+          $(".shopCtg_list li:first-child").appendTo(".shopCtg_list");
+          $(".shopCtg_list").css({ top: 0 });
+        });
+    }
 
     /* ########################### */
     /* #con3_makingFilm video script */
@@ -136,14 +187,6 @@ export function index() {
     // 페이지 언로드 시 애니메이션 프레임 취소
     window.addEventListener("beforeunload", () => {
       cancelAnimationFrame(rafId);
-    });
-
-    // 스크롤 이벤트 등록
-    // window.addEventListener("scroll", updateVideoPlayback);
-    window.addEventListener("scroll", () => {
-      console.time();
-      requestAnimationFrame(updateVideoPlayback);
-      console.timeEnd();
     });
   });
 }
