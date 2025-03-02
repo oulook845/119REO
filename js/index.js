@@ -170,7 +170,6 @@ export function index() {
 
     function updateVideoPlayback() {
       const scrollPosition = window.scrollY;
-      // console.log(scrollPosition)
 
       // 스크롤 위치가 변경되지 않았다면 업데이트 건너뛰기
       if (scrollPosition === lastScrollPosition) {
@@ -203,12 +202,11 @@ export function index() {
 
       lastScrollPosition = scrollPosition;
       rafId = requestAnimationFrame(updateVideoPlayback);
-
-      sectHeight_grant(); // 비디오 준비 후 모든 section 높이 저장
     }
-
+    
     // 초기 호출
     rafId = requestAnimationFrame(updateVideoPlayback);
+    sectHeight_grant(); // 비디오 준비 후 모든 section 높이 저장
 
     // 페이지 언로드 시 애니메이션 프레임 취소
     window.addEventListener("beforeunload", () => {
