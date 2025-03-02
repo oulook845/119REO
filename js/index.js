@@ -15,22 +15,24 @@ export function index() {
     const elements = ["visual", "con1_3r", "con2_shop", "con3_makingFilm"]; // 추가시 저장하고 싶은 이름으로 설정(이름보다 순서가 중요)
     let sect_totalHeight = 0;
 
-    elements.forEach((element, index) => {
-      // const offsetTop = Math.floor($(`#${element}`).offset().top);
-      // window[`${element}_offsetTop`] = offsetTop;
-      let sectHeight = document.querySelector(`#${element}`).getBoundingClientRect().height;
-      
-      const offsetTop = sect_totalHeight;
-      sect_totalHeight = sect_totalHeight + sectHeight;
-      
-      // conditions 배열에 새 객체 추가 ★
-      conditions.push({
-        name: element,
-        threshold: offsetTop - scroll_gap,
+    function sectHeight_grant (){
+      elements.forEach((element, index) => {
+        // const offsetTop = Math.floor($(`#${element}`).offset().top);
+        // window[`${element}_offsetTop`] = offsetTop;
+        let sectHeight = document.querySelector(`#${element}`).getBoundingClientRect().height;
+        
+        const offsetTop = sect_totalHeight;
+        sect_totalHeight = sect_totalHeight + sectHeight;
+        
+        // conditions 배열에 새 객체 추가 ★
+        conditions.push({
+          name: element,
+          threshold: offsetTop - scroll_gap,
+        });
+        // executionStates 객체에 초기 상태 설정
+        executionStates[element] = false;
       });
-      // executionStates 객체에 초기 상태 설정
-      executionStates[element] = false;
-    });
+    }
 
     // 스크롤 이벤트 핸들러
     $(window).scroll(function () {
@@ -201,6 +203,8 @@ export function index() {
 
       lastScrollPosition = scrollPosition;
       rafId = requestAnimationFrame(updateVideoPlayback);
+
+      sectHeight_grant(); // 비디오 준비 후 모든 section 높이 저장
     }
 
     // 초기 호출
