@@ -6,41 +6,49 @@ main {
   /* #con3_makingFilm ****************/
 }
 main #visual {
-  height: 100vh;
+  height: 500vh;
   position: relative;
-  padding: 0 11.1111111111vh; /* 120px */
-  overflow: hidden;
 }
 main #visual video.visual_bg {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   user-select: none;
   pointer-events: none;
-  position: absolute;
+  position: sticky;
   left: 0;
   top: 0;
 }
-main #visual div.intro_txt {
+main #visual .inner {
+  max-width: 100%;
   width: 100%;
-  color: #fff;
+  height: 100%;
   position: absolute;
+  left: 0;
+  top: 0;
+  padding-bottom: 22.2222vh; /* 240px */
+}
+main #visual .inner div.intro_txt {
+  width: 100%;
+  padding: 0 11.1111111111vh; /* 120px */
+  color: #fff;
+  position: sticky;
   left: 0;
   top: 41.1111111111vh; /* 444px */
 }
-main #visual div.intro_txt h2.visual_title {
+main #visual .inner div.intro_txt h2.visual_title {
   width: fit-content;
   font-family: "JalnanGothic";
   font-size: 37.037vh; /* 400px 37.0370vh */
-  margin-left: auto; /* 400px */
-  margin-top: 27.7778vh; /* 300px */
+  margin-left: auto; /* 300px */
+  padding-top: 25vh; /* 240px */
   transform: translateX(10%);
 }
-main #visual div.intro_txt p {
+main #visual .inner div.intro_txt p {
   margin-top: 5.5555555556vh; /* 60px */
   color: rgba(255, 255, 255, 0.2);
 }
-main #visual div.intro_txt p span {
+main #visual .inner div.intro_txt p span {
   display: block;
   font-size: 2.7777777778vh; /* 30px */
   position: relative;
@@ -204,7 +212,16 @@ main #con2_shop .inner .txt_wrap .desc_wrap {
 main #con2_shop .inner .txt_wrap .desc_wrap .desc_kor {
   font-size: 20px;
   line-height: 2.25; /* 45px */
-  color: #777777;
+  color: rgba(255, 255, 255, 0.2);
+}
+main #con2_shop .inner .txt_wrap .desc_wrap .desc_kor span {
+  position: relative;
+  width: max-content;
+  background: linear-gradient(to right, #fff, #fff) no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0%;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
 }
 main #con2_shop .inner .txt_wrap .desc_wrap .desc_eng {
   font-size: 18px;

@@ -13,10 +13,16 @@ export function index() {
 
     // 모든 section의 위치를 객체로 저장
     const elements = ["visual", "con1_3r", "con2_shop", "con3_makingFilm"]; // 추가시 저장하고 싶은 이름으로 설정(이름보다 순서가 중요)
-    elements.forEach((element, index) => {
-      const offsetTop = Math.floor($(`#${element}`).offset().top);
-      window[`${element}_offsetTop`] = offsetTop;
+    let sect_totalHeight = 0;
 
+    elements.forEach((element, index) => {
+      // const offsetTop = Math.floor($(`#${element}`).offset().top);
+      // window[`${element}_offsetTop`] = offsetTop;
+      let sectHeight = document.querySelector(`#${element}`).getBoundingClientRect().height;
+      
+      const offsetTop = sect_totalHeight;
+      sect_totalHeight = sect_totalHeight + sectHeight;
+      
       // conditions 배열에 새 객체 추가 ★
       conditions.push({
         name: element,
@@ -59,32 +65,34 @@ export function index() {
     const visual = document.querySelector("#visual");
     const visualTitle = visual.querySelector(".visual_title");
     const visualDescSpans = visual.querySelectorAll(".visual_desc span");
-    
-    const tl = gsap.timeline({
+
+    const visualTl = gsap.timeline({
       scrollTrigger: {
         trigger: visual,
         start: "top top",
-        end: "+=500%", // 애니메이션 지속 시간 조절
+        end: "bottom bottom", // 애니메이션 지속 시간 조절
         scrub: true,
-        pin: true,
-        markers: true
-      }
+        // pin: true,
+        markers: true,
+      },
     });
-    
-    tl.to(visualTitle, {
+
+    visualTl.to(visualTitle, {
       fontSize: 30,
-      margin: 0,
+      padding: 0,
+      margin:0,
+      x:0,
       duration: 3,
-      ease: "power1.inOut" /* 선형에 가까운 부드러운 효과 */
+      ease: "power1.inOut" /* 선형에 가까운 부드러운 효과 */,
     });
-    
+
     visualDescSpans.forEach((span, index) => {
-      tl.to(span, {
+      visualTl.to(span, {
         backgroundSize: "100%",
         duration: 2,
       });
     });
-    tl.to({}, {duration: 2});
+    visualTl.to({}, { duration: 2 });
 
     /* ########################### */
     /* #con2_shop script */
@@ -93,6 +101,7 @@ export function index() {
     const con2Shop_prodList = con2Shop.querySelector(".product_list");
     const con2Shop_ctgList = con2Shop.querySelector(".shopCtg_list");
     const con2Shop_ctgListItem = con2Shop.querySelectorAll(".shopCtg_list li");
+    const con2_DescKor_span = con2Shop.querySelectorAll(".desc_kor span");
 
     /* sticky를 위해 product 높이를 받아서 con2에게 전달 */
     let shopList_height = con2Shop_prodList.clientHeight;
@@ -108,6 +117,24 @@ export function index() {
           $(".shopCtg_list").css({ top: 0 });
         });
     }
+
+    const con2Tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: con2Shop,
+        start: "top top",
+        end: "75% bottom",
+        scrub: true,
+        // pin: true,
+        markers: true,
+      },
+    });
+
+    con2_DescKor_span.forEach((span, index) => {
+      con2Tl.to(span, {
+        backgroundSize: "100%",
+        duration: 2,
+      });
+    });
 
     /* ########################### */
     /* #con3_makingFilm video script */
@@ -141,6 +168,7 @@ export function index() {
 
     function updateVideoPlayback() {
       const scrollPosition = window.scrollY;
+      // console.log(scrollPosition)
 
       // 스크롤 위치가 변경되지 않았다면 업데이트 건너뛰기
       if (scrollPosition === lastScrollPosition) {

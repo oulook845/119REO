@@ -144,3 +144,6 @@ footer#footer {
   height: 300px;
   background: #111;
 }
+footer#footer .inner {
+  width: 100%;
+}
