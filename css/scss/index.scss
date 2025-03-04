@@ -1,9 +1,8 @@
 main {
-  /* #visual ****************/
+  //* #visual ****************/
   #visual {
     height: 500vh;
     position: relative;
-    // overflow: hidden;
     video.visual_bg {
       width: 100%;
       height: 100vh;
@@ -61,99 +60,118 @@ main {
     }
   }
 
-  /* #con1_3r ****************/
+  //* #con1_3r ****************/
   #con1_3r {
     width: 100%;
-    height: 100vh;
-    &.on .bg_img .swiper-slide {
-      transform: scale(100%);
-    }
-    .bg_img {
+    height: 300vh;
+    .outer{
       width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      &::before {
-        content: "";
+      height:100vh;
+      position: sticky;
+      left:0;
+      top:0;
+      overflow: hidden;
+      .bg_img {
         width: 100%;
         height: 100%;
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 9;
-        background: radial-gradient(circle, #555 0%, #000 50%);
-        opacity: 0.5;
-      }
-
-      ul {
-        li {
+        &::before {
+          content: "";
           width: 100%;
           height: 100%;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: cover;
           position: absolute;
           left: 0;
           top: 0;
-          transform: scale(130%);
-          transition: transform 3s ease-in-out;
-          &:nth-child(1) {
-            background-image: url(../images/index/con1_3r_rememberBg.png);
-          }
-          &:nth-child(2) {
-            background-image: url(../images/index/con1_3r_rememberBg.png);
-          }
-          &:nth-child(3) {
-            background-image: url(../images/index/con1_3r_rememberBg.png);
+          z-index: 9;
+          background: radial-gradient(circle, #555 0%, #000 50%);
+          opacity: 0.5;
+        }
+  
+        ul {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          li {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: scale(130%);
+            transition: transform 3s, opacity 0.5s;
+            opacity: 0;
+            &.on {
+              // transform: scale(100%);
+              opacity: 1;
+            }
+            &.remember {
+              background-image: url(../images/index/con1_3r_rememberBg.png);
+            }
+            &.rescue {
+              background-image: url(../images/index/con1_3r_rescueBg.png);
+            }
+            &.recycle {
+              background-image: url(../images/index/con1_3r_recycleBg.png);
+            }
           }
         }
       }
-    }
-    .inner {
-      width: 100%;
-      height: 100%;
-      .desc_swiper {
+      .inner {
         width: 100%;
         height: 100%;
-        position: relative;
         z-index: 9;
-        ul.desc_list {
+        .desc_wrap {
           width: 100%;
           height: 100%;
-          display: flex;
-          position: absolute;
-          li {
-            flex: 1;
+          position: relative;
+          z-index: 9;
+          ul.desc_list {
+            width: fit-content;
+            height: 100%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            &.on {
+            position: absolute;
+            transition: 0.5s;
+            li {
+              width: calc(100vw / 3);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              text-align: center;
+              &.on {
+                h3 {
+                  font-family: "JalnanGothic";
+                  font-size: 3.1250vw; /* 60px */
+                  line-height: 1.5;
+                  letter-spacing: 0.2083vw; /* 4px */
+                  color: #fff;
+                }
+                p {
+                  opacity: 1;
+                  display: block;
+                  // transition: opacity 3s;
+                }
+              }
               h3 {
-                font-family: "JalnanGothic";
-                font-size: 60px;
-                line-height: 60px;
-                color: #fff;
+                font-weight: 900;
+                font-size: 2.0833vw; /* 40px */
+                color: rgba(255, 255, 255, 0.7);
               }
               p {
-                opacity: 1;
-                // transition: opacity 3s;
+                width: fit-content; /* 560px */
+                font-size:  18px; /* 0.9375vw */
+                line-height: 1.9; /* 35px */
+                margin: 0 auto;
+                margin-top: 1.5625vw; /* 30px */
+                color: #fff;
+                word-break: keep-all;
+                word-wrap: break-word;
+                opacity: 0;
               }
-            }
-            h3 {
-              font-weight: 900;
-              font-size: 40px;
-              color: rgba(255, 255, 255, 0.7);
-            }
-            p {
-              width: fit-content; /* 560px */
-              font-size: 18px; /* 0.9375vw */
-              line-height: 35px; /* 1.8229166666666667vw */
-              margin: 0 auto;
-              margin-top: 30px;
-              color: #fff;
-              // opacity: 0;
             }
           }
         }
@@ -161,7 +179,7 @@ main {
     }
   }
 
-  /* #con2_shop ****************/
+  //* #con2_shop ****************/
   #con2_shop {
     .inner {
       width: 87.5vw; /* 1680px */
@@ -268,7 +286,7 @@ main {
     }
   }
 
-  /* #con3_makingFilm ****************/
+  //* #con3_makingFilm ****************/
   #con3_makingFilm {
     .inner {
       #bound-one {

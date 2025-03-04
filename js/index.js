@@ -15,15 +15,13 @@ export function index() {
     const elements = ["visual", "con1_3r", "con2_shop", "con3_makingFilm"]; // 추가시 저장하고 싶은 이름으로 설정(이름보다 순서가 중요)
     let sect_totalHeight = 0;
 
-    function sectHeight_grant (){
+    function sectHeight_grant() {
       elements.forEach((element, index) => {
-        // const offsetTop = Math.floor($(`#${element}`).offset().top);
-        // window[`${element}_offsetTop`] = offsetTop;
         let sectHeight = document.querySelector(`#${element}`).getBoundingClientRect().height;
-        
+
         const offsetTop = sect_totalHeight;
         sect_totalHeight = sect_totalHeight + sectHeight;
-        
+
         // conditions 배열에 새 객체 추가 ★
         conditions.push({
           name: element,
@@ -38,6 +36,8 @@ export function index() {
     $(window).scroll(function () {
       let current_top = Math.floor($(this).scrollTop());
 
+      con1_scrollSlide(current_top);
+
       // conditions 배열에 있는 요소의 위치와 비교
       conditions.forEach((condition, idx) => {
         if (current_top > condition.threshold && !executionStates[condition.name]) {
@@ -46,7 +46,8 @@ export function index() {
             case "visual":
               break;
             case "con1_3r":
-              $("#con1_3r").addClass("on");
+              $("#con1_3r .bg_img_List li").css({ transform: "scale(100%)" });
+
               break;
             case "con2_shop":
               setInterval(con2Ctg_ani, 3000);
@@ -74,16 +75,14 @@ export function index() {
         start: "top top",
         end: "bottom bottom", // 애니메이션 지속 시간 조절
         scrub: true,
-        // pin: true,
-        markers: true,
       },
     });
 
     visualTl.to(visualTitle, {
       fontSize: 30,
       padding: 0,
-      margin:0,
-      x:0,
+      margin: 0,
+      x: 0,
       duration: 3,
       ease: "power1.inOut" /* 선형에 가까운 부드러운 효과 */,
     });
@@ -95,6 +94,52 @@ export function index() {
       });
     });
     visualTl.to({}, { duration: 2 });
+
+    /* ########################### */
+    /* #con1_3r script */
+    /* ########################### */
+
+    const bgImg_list = document.querySelectorAll("#con1_3r .bg_img li");
+    const desc_list = document.querySelectorAll("#con1_3r .desc_list li");
+
+    const lastContent = $("#con1_3r .desc_list li").last().clone().html();
+    $("#con1_3r ul.desc_list").prepend(`<li class="swiper-slide">${lastContent}</li>`);
+
+    let con1_idx = 0;
+    const con1_3r = document.querySelector("#con1_3r");
+    const con1_3r_top = con1_3r.offsetTop;
+    const slider = document.querySelector(".desc_list");
+    const sliderLi = document.querySelector(".desc_list li").offsetWidth;
+    const con1_nextSlide = con1_3r.getBoundingClientRect().height / 4;
+    console.log(con1_nextSlide)
+
+    function con1_classList() {
+      bgImg_list.forEach((list) => {
+        list.classList.remove("on");
+      });
+      desc_list.forEach((list) => {
+        list.classList.remove("on");
+      });
+      bgImg_list[con1_idx].classList.add("on");
+      desc_list[con1_idx].classList.add("on");
+
+      slider.style.marginLeft = -(sliderLi * con1_idx) + "px";
+    }
+    con1_classList(); // 초기 class 적용
+
+    function con1_scrollSlide(current_top) {
+
+      if (current_top >= con1_3r_top && current_top < con1_3r_top + con1_nextSlide) {
+        con1_idx = 0;
+        con1_classList();
+      } else if (current_top >= con1_3r_top + con1_nextSlide && current_top < con1_3r_top + con1_nextSlide * 2) {
+        con1_idx = 1;
+        con1_classList();
+      } else if (current_top >= con1_3r_top + con1_nextSlide * 2) {
+        con1_idx = 2;
+        con1_classList();
+      }
+    }
 
     /* ########################### */
     /* #con2_shop script */
@@ -124,10 +169,8 @@ export function index() {
       scrollTrigger: {
         trigger: con2Shop,
         start: "top top",
-        end: "75% bottom",
+        end: "90% bottom",
         scrub: true,
-        // pin: true,
-        markers: true,
       },
     });
 
@@ -203,7 +246,7 @@ export function index() {
       lastScrollPosition = scrollPosition;
       rafId = requestAnimationFrame(updateVideoPlayback);
     }
-    
+
     // 초기 호출
     rafId = requestAnimationFrame(updateVideoPlayback);
     sectHeight_grant(); // 비디오 준비 후 모든 section 높이 저장

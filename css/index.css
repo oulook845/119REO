@@ -1,10 +1,4 @@
 @charset "UTF-8";
-main {
-  /* #visual ****************/
-  /* #con1_3r ****************/
-  /* #con2_shop ****************/
-  /* #con3_makingFilm ****************/
-}
 main #visual {
   height: 500vh;
   position: relative;
@@ -61,19 +55,24 @@ main #visual .inner div.intro_txt p span {
 }
 main #con1_3r {
   width: 100%;
+  height: 300vh;
+}
+main #con1_3r .outer {
+  width: 100%;
   height: 100vh;
+  position: sticky;
+  left: 0;
+  top: 0;
+  overflow: hidden;
 }
-main #con1_3r.on .bg_img .swiper-slide {
-  transform: scale(100%);
-}
-main #con1_3r .bg_img {
+main #con1_3r .outer .bg_img {
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
 }
-main #con1_3r .bg_img::before {
+main #con1_3r .outer .bg_img::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -84,7 +83,12 @@ main #con1_3r .bg_img::before {
   background: radial-gradient(circle, #555 0%, #000 50%);
   opacity: 0.5;
 }
-main #con1_3r .bg_img ul li {
+main #con1_3r .outer .bg_img ul {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+main #con1_3r .outer .bg_img ul li {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -94,61 +98,72 @@ main #con1_3r .bg_img ul li {
   left: 0;
   top: 0;
   transform: scale(130%);
-  transition: transform 3s ease-in-out;
+  transition: transform 3s, opacity 0.5s;
+  opacity: 0;
 }
-main #con1_3r .bg_img ul li:nth-child(1) {
+main #con1_3r .outer .bg_img ul li.on {
+  opacity: 1;
+}
+main #con1_3r .outer .bg_img ul li.remember {
   background-image: url(../images/index/con1_3r_rememberBg.png);
 }
-main #con1_3r .bg_img ul li:nth-child(2) {
-  background-image: url(../images/index/con1_3r_rememberBg.png);
+main #con1_3r .outer .bg_img ul li.rescue {
+  background-image: url(../images/index/con1_3r_rescueBg.png);
 }
-main #con1_3r .bg_img ul li:nth-child(3) {
-  background-image: url(../images/index/con1_3r_rememberBg.png);
+main #con1_3r .outer .bg_img ul li.recycle {
+  background-image: url(../images/index/con1_3r_recycleBg.png);
 }
-main #con1_3r .inner {
+main #con1_3r .outer .inner {
   width: 100%;
   height: 100%;
+  z-index: 9;
 }
-main #con1_3r .inner .desc_swiper {
+main #con1_3r .outer .inner .desc_wrap {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 9;
 }
-main #con1_3r .inner .desc_swiper ul.desc_list {
-  width: 100%;
+main #con1_3r .outer .inner .desc_wrap ul.desc_list {
+  width: fit-content;
   height: 100%;
   display: flex;
   position: absolute;
+  transition: 0.5s;
 }
-main #con1_3r .inner .desc_swiper ul.desc_list li {
-  flex: 1;
+main #con1_3r .outer .inner .desc_wrap ul.desc_list li {
+  width: 33.3333333333vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
-main #con1_3r .inner .desc_swiper ul.desc_list li.on h3 {
+main #con1_3r .outer .inner .desc_wrap ul.desc_list li.on h3 {
   font-family: "JalnanGothic";
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 3.125vw; /* 60px */
+  line-height: 1.5;
+  letter-spacing: 0.2083vw; /* 4px */
   color: #fff;
 }
-main #con1_3r .inner .desc_swiper ul.desc_list li.on p {
+main #con1_3r .outer .inner .desc_wrap ul.desc_list li.on p {
   opacity: 1;
+  display: block;
 }
-main #con1_3r .inner .desc_swiper ul.desc_list li h3 {
+main #con1_3r .outer .inner .desc_wrap ul.desc_list li h3 {
   font-weight: 900;
-  font-size: 40px;
+  font-size: 2.0833vw; /* 40px */
   color: rgba(255, 255, 255, 0.7);
 }
-main #con1_3r .inner .desc_swiper ul.desc_list li p {
+main #con1_3r .outer .inner .desc_wrap ul.desc_list li p {
   width: fit-content; /* 560px */
   font-size: 18px; /* 0.9375vw */
-  line-height: 35px; /* 1.8229166666666667vw */
+  line-height: 1.9; /* 35px */
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 1.5625vw; /* 30px */
   color: #fff;
+  word-break: keep-all;
+  word-wrap: break-word;
+  opacity: 0;
 }
 main #con2_shop .inner {
   width: 87.5vw; /* 1680px */
