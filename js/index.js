@@ -1,4 +1,5 @@
-export function index() {
+import { customCursor } from "./customCursor.js";
+
   // read.me //
   // ■ content 추가시 elements에 배열 추가
   // 전역 변수로 conditions와 executionStates 정의
@@ -47,7 +48,7 @@ export function index() {
               break;
             case "con1_3r":
               $("#con1_3r .bg_img_List li").css({ transform: "scale(100%)" });
-
+              customCursor();
               break;
             case "con2_shop":
               setInterval(con2Ctg_ani, 3000);
@@ -64,6 +65,12 @@ export function index() {
 
     /* ########################### */
     /* #visual script */
+    /* 
+      gsap animation
+      title의 크기가 줄어들며 왼쪽으로 붙고
+      desc에 색상이 채워짐
+      다음 section으로 바로 넘어가지 않도록 빈 구역 추가
+     */
     /* ########################### */
     const visual = document.querySelector("#visual");
     const visualTitle = visual.querySelector(".visual_title");
@@ -97,6 +104,13 @@ export function index() {
 
     /* ########################### */
     /* #con1_3r script */
+    /* 
+      desc 마지막 콘텐츠를 복사해 슬라이드 맨 앞에 복사
+      #con_3r의 높이를 나누어 구간지정
+      구간마다 슬라이드가 marginLeft로 움직임
+      con1_idx라는 변수에 자릿값을 지정해 현재 활성화 된 슬라이드 지정
+      활성화 된 슬라이드에 클래스를 주어 스타일 변화
+    */
     /* ########################### */
 
     const bgImg_list = document.querySelectorAll("#con1_3r .bg_img li");
@@ -110,8 +124,7 @@ export function index() {
     const con1_3r_top = con1_3r.offsetTop;
     const slider = document.querySelector(".desc_list");
     const sliderLi = document.querySelector(".desc_list li").offsetWidth;
-    const con1_nextSlide = con1_3r.getBoundingClientRect().height / 4;
-    console.log(con1_nextSlide)
+    const con1_nextSlide = Math.floor(con1_3r.getBoundingClientRect().height / 3.5);
 
     function con1_classList() {
       bgImg_list.forEach((list) => {
@@ -128,7 +141,6 @@ export function index() {
     con1_classList(); // 초기 class 적용
 
     function con1_scrollSlide(current_top) {
-
       if (current_top >= con1_3r_top && current_top < con1_3r_top + con1_nextSlide) {
         con1_idx = 0;
         con1_classList();
@@ -143,11 +155,15 @@ export function index() {
 
     /* ########################### */
     /* #con2_shop script */
+    /*
+      styicky를 위해 .product_list의 높이를 받아 #con2_shop에 높이를 지정
+      jQuery 콜백함수를 사용해 .shopCtg_list에 올라가는 slide 구현 
+    */
     /* ########################### */
     const con2Shop = document.getElementById("con2_shop");
     const con2Shop_prodList = con2Shop.querySelector(".product_list");
     const con2Shop_ctgList = con2Shop.querySelector(".shopCtg_list");
-    const con2Shop_ctgListItem = con2Shop.querySelectorAll(".shopCtg_list li");
+    const con2Shop_ctgListItem = con2Shop_ctgList.querySelectorAll(".shopCtg_list li");
     const con2_DescKor_span = con2Shop.querySelectorAll(".desc_kor span");
 
     /* sticky를 위해 product 높이를 받아서 con2에게 전달 */
@@ -256,4 +272,3 @@ export function index() {
       cancelAnimationFrame(rafId);
     });
   });
-}

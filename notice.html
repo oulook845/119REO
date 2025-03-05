@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>119REO NOTICE</title>
+    <link rel="stylesheet" href="./css/import.css" />
+
+    <!-- sciprt -->
+    <!-- jQuery 3.7.1 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="topBtn" role="button"></div>
+    <header id="header">
+      <h1 id="logo">
+        <a href="#"><img src="./images/common/logo.png" alt="로고" /></a>
+      </h1>
+      <nav id="gnb">
+        <ul class="menu">
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./shop.html">SHOP</a></li>
+          <li><a href="./notice.html">NOTICE</a></li>
+          <li><a href="./innovation.html">INNOVATION</a></li>
+        </ul>
+        <p class="desc">
+          REBIRTH OF LIFE-SAVING REMAINS 119REO IS A FASHIN BRAND<br />THAT UPLOADS LIFE-SAVING FIREPROOF CLOTHING INTO
+          A BAG.<br />I AM HELPING THE CANCER FIGHTER BY COLLECTING THE FIRE UNIFORM
+        </p>
+        <button class="gnb_closeBtn"><span class="txt_hidden">닫기</span></button>
+      </nav>
+      <button id="header_menu" role="button"><a href="#">MENU</a></button>
+    </header>
+
+    <!--######## script ########-->
+    <!-- lenis cdn -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+    <script>
+      const lenis = new Lenis({
+        duration: 1.5,
+        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        smooth: true,
+        smoothTouch: false,
+      });
+      // Lenis 애니메이션 프레임 처리
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+    <script type="module" src="./js/import.js"></script>
+  </body>
+</html>

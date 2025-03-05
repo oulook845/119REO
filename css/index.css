@@ -1,4 +1,10 @@
 @charset "UTF-8";
+main section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #111;
+}
 main #visual {
   height: 500vh;
   position: relative;
@@ -55,7 +61,7 @@ main #visual .inner div.intro_txt p span {
 }
 main #con1_3r {
   width: 100%;
-  height: 300vh;
+  height: 600vh;
 }
 main #con1_3r .outer {
   width: 100%;

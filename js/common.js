@@ -21,47 +21,43 @@ export function common() {
   });
   window.onbeforeunload = function () {
     scrollTop();
-  }
-  
-  function scrollTop(){
+  };
+
+  function scrollTop() {
     lenis.stop();
     window.scrollTo(0, 0);
+    navReset(); // nav 초기화 (안보이게 숨김)
     lenis.start();
   }
+  function navReset() {
+    gnb.classList.remove("on"); // nav#gnb 숨기기
+    header_menuBtn.style.opacity = 1;
+    setTimeout(function () {
+      navClass = false;
+    }, 750);
+  }
 
+  let navClass = false;
   header_menuBtn.addEventListener("click", function () {
     gnb.classList.add("on"); // nav#gnb 보이기
     this.style.opacity = 0;
+    setTimeout(function () {
+      navClass = true;
+    }, 750);
   });
+
   gnb_closeBtn.addEventListener("click", function () {
-    gnb.classList.remove("on"); // nav#gnb 숨기기
-    header_menuBtn.style.opacity = 1;
+    navReset();
+  });
+  
+  window.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" || e.keyCode === 27) {
+      if (navClass !== false) {
+        navReset();
+      }
+    }
   });
 
   //footer
 
-  // 커스텀 커서
-  const cursor = document.getElementById("custom_cursor");
-  const boxs = document.querySelectorAll(".cursor_area");
-
-  boxs.forEach((box) => {
-    box.addEventListener("mouseenter", function () {
-      cursor.style.padding = "calc(200px / 2)";
-      cursor.style.opacity = "1";
-
-      window.addEventListener("mousemove", function (e) {
-        let cursorX = e.clientX;
-        let cursorY = e.clientY;
-
-        setTimeout(() => {
-          cursor.style.left = cursorX + "px";
-          cursor.style.top = cursorY + "px";
-        }, 120);
-      });
-    });
-    box.addEventListener("mouseleave", function () {
-      cursor.style.padding = "0";
-      cursor.style.opacity = "0";
-    });
-  });
 }

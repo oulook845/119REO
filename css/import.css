@@ -1,12 +1,11 @@
 @charset "utf-8";
+/* Link Swiper's CSS */
+/* @import url(https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css); */
 
 @import url(./reset.css);
 @import url(./common.css);
 @import url(./component.css);
 @import url(./font.css);
-
-/* main */
-@import url(./index.css);
 
 * {
   font-family: "NanumSquare";

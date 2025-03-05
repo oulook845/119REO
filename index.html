@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>119REO</title>
     <link rel="stylesheet" href="./css/import.css" />
-    <!-- Link Swiper's CSS -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="./css/index.css" />
 
     <!-- sciprt -->
     <!-- jQuery 3.7.1 -->
     <script src="./js/jquery-3.7.1.min.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <span id="custom_cursor"></span>
@@ -23,10 +20,10 @@
       </h1>
       <nav id="gnb">
         <ul class="menu">
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">SHOP</a></li>
-          <li><a href="#">NOTICE</a></li>
-          <li><a href="#">INNOVATION</a></li>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./shop.html">SHOP</a></li>
+          <li><a href="./notice.html">NOTICE</a></li>
+          <li><a href="./innovation.html">INNOVATION</a></li>
         </ul>
         <p class="desc">
           REBIRTH OF LIFE-SAVING REMAINS 119REO IS A FASHIN BRAND<br />THAT UPLOADS LIFE-SAVING FIREPROOF CLOTHING INTO
@@ -174,7 +171,7 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.min.js"></script>
     <script>
       const lenis = new Lenis({
-        duration: 2,
+        duration: 1.5,
         easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
         direction: "vertical",
         smooth: true,
@@ -194,5 +191,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
     <script type="module" src="./js/import.js"></script>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>

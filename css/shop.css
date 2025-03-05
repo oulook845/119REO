@@ -1,0 +1,147 @@
+* {
+  color: #222;
+}
+
+#header {
+  background: rgba(17, 17, 17, 0.7);
+}
+
+main section {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: #222;
+}
+main section:nth-child(1) .stickyBg {
+  background-image: url(../images/shop/shop_sticky1.png);
+}
+main section:nth-child(2) .stickyBg {
+  background-image: url(../images/shop/shop_sticky2.png);
+}
+main section:nth-child(3) .stickyBg {
+  background-image: url(../images/shop/shop_sticky3.png);
+}
+main section .stickyBg {
+  width: 37.8646vw; /* 727px */
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: sticky;
+  top: 0;
+}
+main section .stickyBg.left {
+  left: 0;
+  margin-right: auto;
+}
+main section .stickyBg.right {
+  right: 0;
+  margin-left: auto;
+}
+main section .inner {
+  width: 100%;
+  position: relative;
+}
+main section .inner .product_wrap {
+  max-width: 1030px; /* 53.6458vw*/
+  width: 100%;
+  height: auto;
+  padding: 100px 80px;
+  position: absolute;
+  top: 100px;
+  z-index: 99;
+}
+main section .inner .product_wrap.left {
+  left: 0;
+}
+main section .inner .product_wrap.right {
+  right: 0;
+}
+main section .inner .product_wrap article:not(:first-of-type) {
+  margin-top: 100px;
+}
+main section .inner .product_wrap article h2.product_title {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+main section .inner .product_wrap article ul.product_list {
+  padding: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 45px;
+  background: #fff;
+  border-radius: 20px;
+}
+main section .inner .product_wrap article ul.product_list li {
+  width: calc((100% - 40px) / 3);
+}
+main section .inner .product_wrap article ul.product_list li figure img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption {
+  margin-top: 20px;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p {
+  position: relative;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_name {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price {
+  font-size: 14px;
+  font-weight: 800;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price del {
+  font-size: 10px;
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(-90%);
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price span {
+  display: inline-block;
+  height: 15px;
+  line-height: 15px;
+  padding: 0px 8px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price span:not(:first-of-type) {
+  margin-left: 5px;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price span.best {
+  color: #ff5f5f;
+  border: 0.5px solid #555555;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price span.md {
+  color: #222222;
+  border: 0.5px solid #555555;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price span.sale {
+  color: #fff;
+  background: #ff5f5f;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price span.salePer {
+  font-size: 14px;
+  font-weight: 900;
+  padding: 0;
+  margin-right: 5px;
+  color: #ff5f5f;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price span.soldOut {
+  color: #fff;
+  background: #555;
+}
+main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price span.hot {
+  color: #222222;
+  border: 0.5px solid #555555;
+}

@@ -3,7 +3,7 @@ html, body{
 }
 header#header {
   width: 100%;
-  height: 100px;
+  height: 9.2593vh; /* 100px */
   padding: 0 70px;
   display: flex;
   justify-content: space-between;
@@ -132,12 +132,6 @@ header#header {
       color: #fff;
     }
   }
-}
-section{
-  width:100%;
-  height:100vh;
-  position: relative;
-  background: #111;
 }
 footer#footer {
   width: 100%;
