@@ -59,7 +59,7 @@ $(document).ready(function () {
   const dona_listWrap = document.getElementById("donationList");
   const dona_Lists = document.querySelectorAll("#donationList li");
 
-  const dona_delay = 700;
+  const dona_delay = 2500;
   dona_listWrap.style.marginTop = `${dona_delay}px`;
 
   const donation_tl = gsap.timeline({
@@ -74,7 +74,7 @@ $(document).ready(function () {
   const typeSplit = new SplitType(dona_title, { types: "chars", tagName: "span" });
 
   gsap.from(".char", {
-    yPercent: 100,
+    // yPercent: 100,
     opacity: 0,
     duration: 0.5,
     ease: "circ.out",
