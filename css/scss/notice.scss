@@ -207,6 +207,7 @@ main {
           top: calc(100vh - 320px);
           z-index: 9;
           user-select: none;
+          pointer-events: none;
           span {
             font-family: "Times New Roman", Times, serif;
           }
@@ -234,7 +235,7 @@ main {
                 opacity: 1;
               }
               img {
-                opacity: 0.5;
+                opacity: 0.8;
               }
               figcaption {
                 margin-top: 20px;

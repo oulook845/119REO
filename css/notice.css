@@ -205,6 +205,7 @@ main section#donation .inner h2.title {
   top: calc(100vh - 320px);
   z-index: 9;
   user-select: none;
+  pointer-events: none;
 }
 main section#donation .inner h2.title span {
   font-family: "Times New Roman", Times, serif;
@@ -232,7 +233,7 @@ main section#donation .inner ul#donationList li figure:hover img {
   opacity: 1;
 }
 main section#donation .inner ul#donationList li figure img {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 main section#donation .inner ul#donationList li figure figcaption {
   margin-top: 20px;
