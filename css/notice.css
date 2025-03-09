@@ -11,6 +11,62 @@ main section#makingStory {
   color: #fff;
   background: #222;
 }
+main section#makingStory .doScroll {
+  width: 40px;
+  height: 60px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  margin-left: -20px;
+  animation: scrollAni 2s infinite linear;
+}
+@keyframes scrollAni {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+main section#makingStory .doScroll.none {
+  display: none;
+}
+main section#makingStory .doScroll::before {
+  content: "SCROLL";
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: -25px;
+}
+main section#makingStory .doScroll::after {
+  content: "";
+  display: block;
+  background: #fff;
+  width: 4px;
+  height: 12px;
+  border-radius: 99px;
+  animation: scaleAni 2s infinite linear;
+}
+@keyframes scaleAni {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 5px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
 main section#makingStory .inner {
   width: 100%;
   height: 100vh;
@@ -126,13 +182,51 @@ main section#makingStory .inner .desc button.moreEvent a {
   line-height: 24px;
   text-decoration: underline;
 }
+main section#donation {
+  background-image: linear-gradient(to bottom, #222 30%, #888 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 100vh;
+}
 main section#donation .inner {
-  background-image: linear-gradient(to bottom, #222 0%, #888 100%);
   position: relative;
 }
 main section#donation .inner h2.title {
+  height: 320px;
   text-align: center;
   color: #fff;
   font-size: 17.7083vw; /* 340px */
   font-family: "Times New Roman", Times, serif;
+  letter-spacing: 5px;
+  position: sticky;
+  left: 0;
+  top: calc(100vh - 320px);
+  z-index: 9;
+  user-select: none;
+}
+main section#donation .inner h2.title span {
+  font-family: "Times New Roman", Times, serif;
+}
+main section#donation .inner ul#donationList {
+  width: 73.9583vw; /* 1420px */
+  margin: 0 auto;
+  padding-bottom: 18.5185vh; /* 200px */
+}
+main section#donation .inner ul#donationList li {
+  opacity: 0;
+}
+main section#donation .inner ul#donationList li:nth-child(even) figure {
+  margin-left: auto;
+}
+main section#donation .inner ul#donationList li:not(:first-child) {
+  margin-top: -45px;
+}
+main section#donation .inner ul#donationList li figure {
+  width: fit-content;
+}
+main section#donation .inner ul#donationList li figure figcaption {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #fff;
 }

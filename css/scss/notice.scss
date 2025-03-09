@@ -10,12 +10,69 @@ main {
       height: 300vh;
       color: #fff;
       background: #222;
+      .doScroll {
+        width: 40px;
+        height: 60px;
+        border-radius: 999px;
+        border: 2px solid #fff;
+        display: flex;
+        justify-content: center;
+        padding-top: 15px;
+        position: absolute;
+        left: 50%;
+        bottom: 60px;
+        margin-left: -20px;
+        animation: scrollAni 2s infinite linear;
+
+        @keyframes scrollAni {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(20%);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        &.none {
+          display: none;
+        }
+        &::before {
+          content: "SCROLL";
+          display: block;
+          font-size: 10px;
+          letter-spacing: 1px;
+          position: absolute;
+          bottom: -25px;
+        }
+        &::after {
+          content: "";
+          display: block;
+          background: #fff;
+          width: 4px;
+          height: 12px;
+          border-radius: 99px;
+          animation: scaleAni 2s infinite linear;
+        }
+        @keyframes scaleAni {
+          0% {
+            margin-top: 0;
+          }
+          50% {
+            margin-top: 5px;
+          }
+          100% {
+            margin-top: 0;
+          }
+        }
+      }
       .inner {
         width: 100%;
         height: 100vh;
         position: sticky;
-        left:0;
-        top:0;
+        left: 0;
+        top: 0;
         div#textContent {
           width: 100%;
           height: 100%;
@@ -31,7 +88,7 @@ main {
             font-family: "Times New Roman", Times, serif;
             display: flex;
             align-items: end;
-            margin-bottom:-1.15vw; /* -20px */
+            margin-bottom: -1.15vw; /* -20px */
             opacity: 0;
             &#making {
               grid-column: 1;
@@ -130,15 +187,53 @@ main {
       }
     }
     &#donation {
+      background-image: linear-gradient(to bottom, #222 30%, #888 100%);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: 100% 100vh;
       .inner {
-        background-image: linear-gradient(to bottom,#222 0%, #888 100%);
         position: relative;
-        h2.title{
-          text-align:center;
-          color:#fff;
+        h2.title {
+          height: 320px;
+          text-align: center;
+          color: #fff;
           font-size: 17.7083vw; /* 340px */
-          font-family: 'Times New Roman', Times, serif;
-          
+          font-family: "Times New Roman", Times, serif;
+          letter-spacing: 5px;
+          position: sticky;
+          left: 0;
+          top: calc(100vh - 320px);
+          z-index: 9;
+          user-select: none;
+          span {
+            font-family: "Times New Roman", Times, serif;
+          }
+        }
+        ul#donationList {
+          // max-width: 1420px;
+          width: 73.9583vw; /* 1420px */
+          margin: 0 auto;
+          padding-bottom: 18.5185vh; /* 200px */
+          li {
+            opacity: 0;
+            &:nth-child(even) {
+              figure {
+                margin-left: auto;
+              }
+            }
+            &:not(:first-child) {
+              margin-top: -45px;
+            }
+            figure {
+              width: fit-content;
+              figcaption {
+                margin-top: 20px;
+                font-weight: 600;
+                color: #fff;
+              }
+            }
+          }
         }
       }
     }
