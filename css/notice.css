@@ -88,22 +88,22 @@ main section#makingStory .inner ul#story_list li.bgImg::after {
   top: 0;
 }
 main section#makingStory .inner ul#story_list li.bgImg:nth-child(1) {
-  background-image: url(../../images/notice/popup01.png);
+  background-image: url(../images/notice/popup01.png);
 }
 main section#makingStory .inner ul#story_list li.bgImg:nth-child(2) {
-  background-image: url(../../images/notice/popup02.png);
+  background-image: url(../images/notice/popup02.png);
 }
 main section#makingStory .inner ul#story_list li.bgImg:nth-child(3) {
-  background-image: url(../../images/notice/popup03.png);
+  background-image: url(../images/notice/popup03.png);
 }
 main section#makingStory .inner ul#story_list li.bgImg:nth-child(4) {
-  background-image: url(../../images/notice/popup04.png);
+  background-image: url(../images/notice/popup04.png);
 }
 main section#makingStory .inner ul#story_list li.bgImg:nth-child(5) {
-  background-image: url(../../images/notice/popup05.png);
+  background-image: url(../images/notice/popup05.png);
 }
 main section#makingStory .inner ul#story_list li.bgImg:nth-child(6) {
-  background-image: url(../../images/notice/popup06.png);
+  background-image: url(../images/notice/popup06.png);
 }
 main section#makingStory .inner ul#story_list li.bgImg p {
   position: relative;
