@@ -116,8 +116,10 @@ import { customCursor } from "./customCursor.js";
     const bgImg_list = document.querySelectorAll("#con1_3r .bg_img li");
     const desc_list = document.querySelectorAll("#con1_3r .desc_list li");
 
+    const firstContent = $("#con1_3r .desc_list li").first().clone().html();
     const lastContent = $("#con1_3r .desc_list li").last().clone().html();
     $("#con1_3r ul.desc_list").prepend(`<li class="swiper-slide">${lastContent}</li>`);
+    $("#con1_3r ul.desc_list").append(`<li class="swiper-slide">${firstContent}</li>`);
 
     let con1_idx = 0;
     const con1_3r = document.querySelector("#con1_3r");
