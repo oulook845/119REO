@@ -20,7 +20,6 @@ $(document).ready(function () {
       start: "top top",
       end: "+=10",
       scrub: true,
-      //   pin: true,
     },
   });
 
@@ -57,12 +56,15 @@ $(document).ready(function () {
   /* ########################################## */
   const donationSect = document.getElementById("donation");
   const dona_title = donationSect.querySelector(".title");
+  const dona_listWrap = document.getElementById("donationList");
   const dona_Lists = document.querySelectorAll("#donationList li");
+
+  dona_listWrap.style.marginTop = "500px";
 
   const donation_tl = gsap.timeline({
     scrollTrigger: {
       trigger: donationSect,
-      start: "top top",
+      start: "+=500 top",
       end: "bottom bottom",
       scrub: true,
     },
@@ -71,8 +73,7 @@ $(document).ready(function () {
   const typeSplit = new SplitType(dona_title, { types: "chars", tagName: "span" });
 
   gsap.from(".char", {
-    trigger: donationSect,
-    yPercent: 20,
+    yPercent: 100,
     opacity: 0,
     duration: 0.5,
     ease: "circ.out",
@@ -80,15 +81,13 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: dona_title,
       start: "top top",
-      end: "bottom top",
+      end: "+=500",
       scrub: true,
-      markers: true, // 디버깅용 마커 (필요시 주석 해제)
+      markers: true,
     },
   });
-
-  dona_Lists.forEach((dona_List) => {
-    donation_tl.to(dona_List, {
-      opacity: 1,
-    });
+  donation_tl.to(dona_Lists, {
+    opacity: 1,
+    stagger: 0.1,
   });
 });

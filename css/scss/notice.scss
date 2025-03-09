@@ -200,6 +200,7 @@ main {
           color: #fff;
           font-size: 17.7083vw; /* 340px */
           font-family: "Times New Roman", Times, serif;
+          line-height:320px;
           letter-spacing: 5px;
           position: sticky;
           left: 0;
@@ -217,6 +218,7 @@ main {
           padding-bottom: 18.5185vh; /* 200px */
           li {
             opacity: 0;
+            pointer-events: none;
             &:nth-child(even) {
               figure {
                 margin-left: auto;
@@ -227,9 +229,16 @@ main {
             }
             figure {
               width: fit-content;
+              pointer-events: all;
+              &:hover img {
+                opacity: 1;
+              }
+              img {
+                opacity: 0.5;
+              }
               figcaption {
                 margin-top: 20px;
-                font-weight: 600;
+                font-weight: bold;
                 color: #fff;
               }
             }

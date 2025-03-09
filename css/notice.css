@@ -198,6 +198,7 @@ main section#donation .inner h2.title {
   color: #fff;
   font-size: 17.7083vw; /* 340px */
   font-family: "Times New Roman", Times, serif;
+  line-height: 320px;
   letter-spacing: 5px;
   position: sticky;
   left: 0;
@@ -215,6 +216,7 @@ main section#donation .inner ul#donationList {
 }
 main section#donation .inner ul#donationList li {
   opacity: 0;
+  pointer-events: none;
 }
 main section#donation .inner ul#donationList li:nth-child(even) figure {
   margin-left: auto;
@@ -224,9 +226,16 @@ main section#donation .inner ul#donationList li:not(:first-child) {
 }
 main section#donation .inner ul#donationList li figure {
   width: fit-content;
+  pointer-events: all;
+}
+main section#donation .inner ul#donationList li figure:hover img {
+  opacity: 1;
+}
+main section#donation .inner ul#donationList li figure img {
+  opacity: 0.5;
 }
 main section#donation .inner ul#donationList li figure figcaption {
   margin-top: 20px;
-  font-weight: 600;
+  font-weight: bold;
   color: #fff;
 }
