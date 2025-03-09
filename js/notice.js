@@ -59,12 +59,13 @@ $(document).ready(function () {
   const dona_listWrap = document.getElementById("donationList");
   const dona_Lists = document.querySelectorAll("#donationList li");
 
-  dona_listWrap.style.marginTop = "500px";
+  const dona_delay = 700;
+  dona_listWrap.style.marginTop = `${dona_delay}px`;
 
   const donation_tl = gsap.timeline({
     scrollTrigger: {
       trigger: donationSect,
-      start: "+=500 top",
+      start: `+=${dona_delay} top`,
       end: "bottom bottom",
       scrub: true,
     },
@@ -81,9 +82,8 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: dona_title,
       start: "top top",
-      end: "+=500",
+      end: `+=${dona_delay}`,
       scrub: true,
-      markers: true,
     },
   });
   donation_tl.to(dona_Lists, {

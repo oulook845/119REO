@@ -37,18 +37,18 @@ main {
       width: 100%;
       position: relative;
       .product_wrap {
-        max-width: 1030px; /* 53.6458vw*/
-        width: 100%;
+        // max-width: 1030px; /* 53.6458vw*/
+        width: 53.6458vw; /* 1030px */
         height: auto;
-        padding: 100px 80px;
+        padding: 100px 0px;
         position: absolute;
         top: 100px;
         z-index: 99;
         &.left {
-          left: 0;
+          left: 80px;
         }
         &.right {
-          right: 0;
+          right: 80px;
         }
         article {
           &:not(:first-of-type) {

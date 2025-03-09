@@ -39,19 +39,18 @@ main section .inner {
   position: relative;
 }
 main section .inner .product_wrap {
-  max-width: 1030px; /* 53.6458vw*/
-  width: 100%;
+  width: 53.6458vw; /* 1030px */
   height: auto;
-  padding: 100px 80px;
+  padding: 100px 0px;
   position: absolute;
   top: 100px;
   z-index: 99;
 }
 main section .inner .product_wrap.left {
-  left: 0;
+  left: 80px;
 }
 main section .inner .product_wrap.right {
-  right: 0;
+  right: 80px;
 }
 main section .inner .product_wrap article:not(:first-of-type) {
   margin-top: 100px;
