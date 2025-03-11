@@ -10,63 +10,6 @@ main {
       height: 300vh;
       color: #fff;
       background: #222;
-      .doScroll {
-        width: 40px;
-        height: 60px;
-        border-radius: 999px;
-        border: 2px solid #fff;
-        display: flex;
-        justify-content: center;
-        padding-top: 15px;
-        position: absolute;
-        left: 50%;
-        bottom: 60px;
-        margin-left: -20px;
-        animation: scrollAni 2s infinite linear;
-
-        @keyframes scrollAni {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(20%);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-        &.none {
-          display: none;
-        }
-        &::before {
-          content: "SCROLL";
-          display: block;
-          font-size: 10px;
-          letter-spacing: 1px;
-          position: absolute;
-          bottom: -25px;
-        }
-        &::after {
-          content: "";
-          display: block;
-          background: #fff;
-          width: 4px;
-          height: 12px;
-          border-radius: 99px;
-          animation: scaleAni 2s infinite linear;
-        }
-        @keyframes scaleAni {
-          0% {
-            margin-top: 0;
-          }
-          50% {
-            margin-top: 5px;
-          }
-          100% {
-            margin-top: 0;
-          }
-        }
-      }
       .inner {
         width: 100%;
         height: 100vh;
@@ -187,12 +130,12 @@ main {
       }
     }
     &#donation {
-      background-image: linear-gradient(to bottom, #222 30%, #888 100%);
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-position: top;
-      background-size: 100% 100vh;
       .inner {
+        background-image: linear-gradient(to bottom, #222 0%, #888 100%);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: 100% 100vh;
         position: relative;
         h2.title {
           height: 320px;

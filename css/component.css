@@ -44,9 +44,8 @@
   transition: padding 0.5s ease-out;
 }
 
-
 /* 탑버튼 top button */
-#topBtn{
+#topBtn {
   padding: calc(3.6458vw / 2); /* 70px */
   position: fixed;
   right: 2.6042vw; /* 50px */
@@ -59,8 +58,68 @@
   z-index: 99999;
 }
 
+/* scroll 아이콘 애니메이션 */
+.doScroll {
+  width: 40px;
+  height: 60px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  margin-left: -20px;
+  animation: scrollAni 2s infinite linear;
+}
+@keyframes scrollAni {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.doScroll.none {
+  display: none;
+}
+.doScroll::before {
+  content: "SCROLL";
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: -25px;
+  color:#fff;
+}
+.doScroll::after {
+  content: "";
+  display: block;
+  background: #fff;
+  width: 4px;
+  height: 12px;
+  border-radius: 99px;
+  animation: scaleAni 2s infinite linear;
+}
+@keyframes scaleAni {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 5px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+/* inner 기본css */
 .inner {
-  width:100%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   position: relative;

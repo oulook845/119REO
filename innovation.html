@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>119REO INNOVATION</title>
     <link rel="stylesheet" href="./css/import.css" />
+    <link rel="stylesheet" href="./css/innovation.css" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -36,7 +37,125 @@
       <button id="header_menu" role="button"><a href="#">MENU</a></button>
     </header>
 
-    <main></main>
+    <main>
+      <section id="visual" class="scrollMotion">
+        <div class="inner">
+          <div class="content">
+            <h2 class="aramidas_logo vs_opc">
+              <img src="./images/innovation/aramidas_logo.png" alt="aramidas_logo" />
+            </h2>
+            <p class="txt">
+              <span class="vs_opc"> 소방관의 용기를 지킨 방화복에서 아라미드 섬유를 추출합니다. </span>
+              <span class="vs_opc">PCR - Aramid (Post Consumer Recycling)</span>
+            </p>
+          </div>
+          <div class="doScroll"></div>
+        </div>
+      </section>
+
+      <section id="aramidas">
+        <div class="inner">
+          <div class="content">
+            <div class="content_title">
+              <h2>ARAMIDAS</h2>
+              <p>아라미드 섬유는 바향족 폴리아마이드 섬유로 <br />내열성과 내구성이 뛰어난 합성 섬유입니다.</p>
+              <img src="./images/innovation/innovation_slideMain.png" alt="화재현장에서 소방관의 모습" />
+            </div>
+            <div class="slideWrap">
+              <ul class="slide_list">
+                <li>
+                  <a href="#">
+                    <figure>
+                      <img src="./images/innovation/innovation_slide01.png" alt="줄에 걸려있는 aramidas 제품" />
+                      <figcaption>
+                        강철의 20% 수준의 무게에 강도는 5배 이상으로 강해 <br />'슈퍼섬유' 또는 '황금실'이라고 불립니다.
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <figure>
+                      <img src="./images/innovation/innovation_slide02.png" alt="aramidas 원단을 제단중인 모습" />
+                      <figcaption>
+                        아무리 힘을 가해도 늘어나지 않고,
+                        <br />총알도 뚫지 못하는 강도를 가졌습니다.
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <figure>
+                      <img src="./images/innovation/innovation_slide03.png" alt="사람을 어깨에 업고 구조중인 소방관 모습" />
+                      <figcaption>
+                        섭씨 500도에서도 불타지 않고,
+                        <br />녹지 않을 정도로 견고합니다.
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <figure>
+                      <img src="./images/innovation/innovation_slide04.png" alt="소방관 헬멧과 aramidas 원단의 모습" />
+                      <figcaption>
+                        광케이블 보강재, 고성능 타이어, 우주항공 소재 등 <br />다양한 분야에서 사용됩니다.
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="inquiry">
+        <div class="inner">
+          <div id="formWrap">
+            <form action="post" name="aramidas_inquiry">
+              <!-- 회사명 -->
+              <label for="CorporateName">
+                Corporate name (회사명)
+                <input type="text" id="CorporateName">
+              </label>
+
+              <!-- 연락처 -->
+              <label for="CorporateName">
+                Phone (연락처)
+                <input type="text">
+                <input type="number" id="phonNum">
+              </label>
+              
+              <!-- 이메일 -->
+              <label for="userEmail">
+                E-main (이메일)
+                <input type="email" id="userEmail">
+              </label>
+
+              <!-- 납품형태 -->
+              <label for="userDelivery">
+                납품형태
+                <input type="radio" id="userDelivery">
+              </label>
+
+              <!-- 요청사함 -->
+              <label for="userRequest">
+                Request (요청사항)
+                <input type="text" id="userRequest">
+              </label>
+              
+              <!-- 전송 -->
+              <label for="userSubmit">
+                Submit
+                <input type="submit" id="userSubmit">
+              </label>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer id="footer">
       <div class="inner">
@@ -61,7 +180,7 @@
         </address>
       </div>
     </footer>
-    
+
     <!--######## script ########-->
     <!-- lenis cdn -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.min.js"></script>
@@ -81,6 +200,13 @@
 
       requestAnimationFrame(raf);
     </script>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <!-- GSAP scrollTrigger CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
     <script type="module" src="./js/import.js"></script>
+    <script type="module" src="./js/inovation.js"></script>
   </body>
 </html>

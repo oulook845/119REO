@@ -5,23 +5,14 @@ $(document).ready(function () {
   const makingStory = document.getElementById("makingStory");
   const mk_opaContents = document.querySelectorAll("#makingStory .opacityTrans");
   const mk_desc = document.querySelector("#makingStory .desc");
-  const mk_scroll = document.querySelector("#makingStory .doScroll");
-
+  
   //   const mk_height = makingStory.getBoundingClientRect().height;
   const mk_ttLength = mk_opaContents.length;
   const mk_delay = 200;
-
+  
   makingStory.style.height = `${mk_delay * (mk_ttLength + 3)}px`;
+  
 
-  gsap.to(mk_scroll, {
-    opacity: 0,
-    scrollTrigger: {
-      trigger: makingStory,
-      start: "top top",
-      end: "+=10",
-      scrub: true,
-    },
-  });
 
   // GSAP 타임라인 생성
   const makingStory_tl = gsap.timeline({
@@ -49,7 +40,7 @@ $(document).ready(function () {
     { opacity: 0, x: 100 }, // 시작 상태
     { opacity: 1, x: 0, duration: 1 } // 종료 상태
   );
-  makingStory_tl.to({}, { duration: 2 });
+//   makingStory_tl.to({}, { duration: 2 });
 
   /* ########################################## */
   /* donation */
@@ -60,21 +51,11 @@ $(document).ready(function () {
   const dona_Lists = document.querySelectorAll("#donationList li");
 
   const dona_delay = 2500;
-  dona_listWrap.style.marginTop = `${dona_delay}px`;
 
-  const donation_tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: donationSect,
-      start: `+=${dona_delay} top`,
-      end: "bottom bottom",
-      scrub: true,
-    },
-  });
-
+  /* donation title */
   const typeSplit = new SplitType(dona_title, { types: "chars", tagName: "span" });
 
   gsap.from(".char", {
-    // yPercent: 100,
     opacity: 0,
     duration: 0.5,
     ease: "circ.out",
@@ -82,10 +63,22 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: dona_title,
       start: "top top",
-      end: `+=${dona_delay}`,
+      end: `+=${dona_delay} bottom`,
       scrub: true,
     },
   });
+
+  /* donation image list */
+  dona_listWrap.style.marginTop = `${dona_delay / 2}px`;
+  const donation_tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: donationSect,
+      start: `+=${dona_delay / 2} center`,
+      end: "bottom bottom",
+      scrub: true,
+    },
+  });
+
   donation_tl.to(dona_Lists, {
     opacity: 1,
     stagger: 0.1,
