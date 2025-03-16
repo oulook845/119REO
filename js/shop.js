@@ -67,11 +67,13 @@ import { shopData } from "./shopData.js";
 //   createProduct(product_Name, product_Price);
 // });
 
-/* section 높이 지정 */
-const sectionElems = document.querySelectorAll("section");
+$(document).ready(function () {
+  /* section 높이 지정 */
+  const sectionElems = document.querySelectorAll("section");
 
-sectionElems.forEach((sectionElem) => {
-  let product_wrap = sectionElem.querySelector(".product_wrap");
-  let productHeight = product_wrap.clientHeight;
-  sectionElem.style.height = `${productHeight + 100}px`;
+  sectionElems.forEach((sectionElem) => {
+    let product_wrap = sectionElem.querySelector(".product_wrap");
+    let productHeight = product_wrap.clientHeight;
+    sectionElem.style.height = `${productHeight + 100}px`;
+  });
 });
