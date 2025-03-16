@@ -187,7 +187,6 @@ main {
                   width: 100%;
                 }
                 &[type="number"] {
-                  appearance: none;
                   width: 100%;
                 }
                 &[placeholder] {
@@ -279,7 +278,6 @@ main {
                       margin-top: 10px;
                     }
                     input[type="checkbox"] {
-                      appearance: none;
                       display: block;
                       width: 20px;
                       height: 20px;
@@ -287,9 +285,6 @@ main {
                       border-radius: 2px;
                       margin-right: 14px;
                       position: relative;
-                      &:checked {
-                        background: rgba(255, 255, 255, 0.7);
-                      }
                     }
                     label {
                       display: block;

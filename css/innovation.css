@@ -184,7 +184,6 @@ main section#inquiry .inner #formWrap form fieldset input[type=email] {
   width: 100%;
 }
 main section#inquiry .inner #formWrap form fieldset input[type=number] {
-  appearance: none;
   width: 100%;
 }
 main section#inquiry .inner #formWrap form fieldset input[placeholder] {
@@ -273,7 +272,6 @@ main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li:
   margin-top: 10px;
 }
 main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li input[type=checkbox] {
-  appearance: none;
   display: block;
   width: 20px;
   height: 20px;
@@ -281,9 +279,6 @@ main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li 
   border-radius: 2px;
   margin-right: 14px;
   position: relative;
-}
-main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li input[type=checkbox]:checked {
-  background: rgba(255, 255, 255, 0.7);
 }
 main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li label {
   display: block;
