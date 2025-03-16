@@ -57,7 +57,7 @@ $(document).ready(function () {
   });
 
   // 슬라이드 애니메이션
-  const slideTl = gsap.timeline({
+  const slide_tl = gsap.timeline({
     scrollTrigger: {
       trigger: aramidas_sect,
       start: "center center",
@@ -68,9 +68,34 @@ $(document).ready(function () {
   });
 
   // 슬라이드 애니메이션 추가
-  slideTl.to(aramidas_slide, { x: "-65%" });
+  slide_tl.to(aramidas_slide, { x: "-65%" });
 
   /* #inquiry ***********/
+  const inquiry_sect = document.getElementById("inquiry");
+  const inquiry_form = document.getElementById("formWrap");
+
+  const inquiryFrom_tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: inquiry_sect,
+      start: "top center",
+      end: "center center",
+      scrub: false,
+    },
+  });
+
+  inquiryFrom_tl.fromTo(
+    inquiry_form,
+    {
+      opacity: 0,
+      y: 100,
+    },
+    {
+      opacity: 1,
+      y: 0, 
+    }
+  );
+
+  // 국가번호 선택 click event
   $("#countryCode h3").click(() => {
     $("#countryCode h3").toggleClass("active");
     $("#countryCode .options").stop().slideToggle();
