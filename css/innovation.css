@@ -133,35 +133,174 @@ main section#aramidas .inner .content div.slideWrap ul.slide_list li a figure fi
   background: #333;
 }
 main section#inquiry {
+  height: auto;
   background-color: #222;
   background-image: url(../../images/innovation/innovation_illust.png);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: auto 42.5926vh; /* auto 460px */
+}
+main section#inquiry .inner {
+  padding: 9.7222vh 0; /* 105px 0 */
 }
 main section#inquiry .inner #formWrap {
   width: 83.3333vw; /* 1600px */
-  height: 75vh; /* 810px */
+  height: 100%;
   background: rgba(250, 249, 246, 0.5);
   border: 2px solid #f2f0ef;
   border-radius: 10px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
 }
 main section#inquiry .inner #formWrap form {
-  padding: 50px 54px 30px 44px;
+  padding: 4.6296vh 5vw 2.7778vh 4.0741vw; /* 50px 54px 30px 44px */
   color: #fff;
 }
-main section#inquiry .inner #formWrap form label {
+main section#inquiry .inner #formWrap form h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+main section#inquiry .inner #formWrap form fieldset {
   display: block;
-  margin-top: 25px;
+  margin-top: 2.3148vh; /* 25px */
 }
-main section#inquiry .inner #formWrap form label input {
-  margin-top: 15px;
+main section#inquiry .inner #formWrap form fieldset legend {
+  margin-bottom: 1.3889vh; /* 15px */
 }
-main section#inquiry .inner #formWrap form label input[type=text] {
-  width: 100%;
+main section#inquiry .inner #formWrap form fieldset label {
+  display: block;
+  font-size: 18px;
+}
+main section#inquiry .inner #formWrap form fieldset input {
+  width: auto;
   height: 40px;
   border: 2px solid var(--off-white);
+  text-indent: 10px;
+}
+main section#inquiry .inner #formWrap form fieldset input[type=text] {
+  width: 100%;
+}
+main section#inquiry .inner #formWrap form fieldset input[type=email] {
+  width: 100%;
+}
+main section#inquiry .inner #formWrap form fieldset input[type=number] {
+  appearance: none;
+  width: 100%;
+}
+main section#inquiry .inner #formWrap form fieldset input[placeholder] {
+  width: auto;
+  margin-left: 10px;
+  font-size: 14px;
+}
+main section#inquiry .inner #formWrap form fieldset input::placeholder {
+  color: #fff;
+  text-indent: 20px;
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum {
+  display: flex;
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode {
+  width: 170px;
+  height: 40px;
+  line-height: 40px; /* 3.7037vh */
+  font-size: 14px;
+  color: #fff;
+  border: 2px solid var(--off-white);
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode h3 {
+  width: 170px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 40px;
+  padding: 0 16px;
+  position: relative;
+  cursor: pointer;
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode h3.active i.selecArrow {
+  transform: rotate(180deg);
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode h3 i.selecArrow {
+  border: 1px solid var(--off-white);
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  transform: rotate(0deg);
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode ul.options {
+  width: 100%;
+  height: 240px;
+  display: none;
+  color: #222;
+  background: var(--off-white);
+  position: absolute;
+  left: 0;
+  top: 50px;
+  z-index: 10;
+  overflow-y: scroll;
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode ul.options::-webkit-scrollbar {
+  width: 5px;
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode ul.options::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 50px;
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode ul.options li {
+  height: 30px;
+  line-height: 30px;
+  font-size: 10px;
+  padding: 0 16px;
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode ul.options li:hover {
+  background: #d9d9d9;
+}
+main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode ul.options li span {
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 10px;
+}
+main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li {
+  display: flex;
+  align-items: center;
+}
+main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li:not(:first-child) {
+  margin-top: 10px;
+}
+main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li input[type=checkbox] {
+  appearance: none;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--off-white);
+  border-radius: 2px;
+  margin-right: 14px;
+  position: relative;
+}
+main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li input[type=checkbox]:checked {
+  background: rgba(255, 255, 255, 0.7);
+}
+main section#inquiry .inner #formWrap form fieldset#checkbox_wrap .checkList li label {
+  display: block;
+}
+main section#inquiry .inner #formWrap form input#userSubmit {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 28px;
+  background: #222;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 30px;
+  cursor: pointer;
+}
+main section#inquiry .inner #formWrap form input#userSubmit:hover {
+  color: #333;
+  background: #d9d9d9;
 }

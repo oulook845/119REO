@@ -1,18 +1,17 @@
 import { common } from "./common.js";
 
 
-const scrollSect = document.querySelector(".scrollMotion");
-const scroll_icon = document.querySelector(".scrollMotion .doScroll");
+// lenis 중지
+const notLenis_elem = document.querySelectorAll(".notLenis");
 
-gsap.to(scroll_icon, {
-  opacity: 0,
-  scrollTrigger: {
-    trigger: scrollSect,
-    start: "top top",
-    end: "+=10",
-    scrub: true,
-  },
-});
+notLenis_elem.forEach((notLenis)=>{
+  notLenis.addEventListener("wheel",function(){
+    lenis.stop();
+  })
+  notLenis.addEventListener('mouseleave', () => {
+    lenis.start(); // Lenis 스크롤 재개
+  });
+})
 
 // js import
 common();

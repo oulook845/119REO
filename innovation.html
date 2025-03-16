@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="./css/innovation.css" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- sciprt -->
     <!-- jQuery 3.7.1 -->
@@ -87,7 +95,10 @@
                 <li>
                   <a href="#">
                     <figure>
-                      <img src="./images/innovation/innovation_slide03.png" alt="사람을 어깨에 업고 구조중인 소방관 모습" />
+                      <img
+                        src="./images/innovation/innovation_slide03.png"
+                        alt="사람을 어깨에 업고 구조중인 소방관 모습"
+                      />
                       <figcaption>
                         섭씨 500도에서도 불타지 않고,
                         <br />녹지 않을 정도로 견고합니다.
@@ -116,41 +127,92 @@
           <div id="formWrap">
             <form action="post" name="aramidas_inquiry">
               <!-- 회사명 -->
-              <label for="CorporateName">
-                Corporate name (회사명)
-                <input type="text" id="CorporateName">
-              </label>
+              <h2>Inquiry for ARAMIDAS purchase (아라미다스 구매 문의)</h2>
+
+              <fieldset>
+                <legend>Corporate name (회사명)</legend>
+                <label for="CorporateName">
+                  <input type="text" id="CorporateName" />
+                </label>
+              </fieldset>
 
               <!-- 연락처 -->
-              <label for="CorporateName">
-                Phone (연락처)
-                <input type="text">
-                <input type="number" id="phonNum">
-              </label>
-              
+              <fieldset id="user_phoneNum">
+                <legend>Phone (연락처)</legend>
+                <div id="countryCode">
+                  <h3>국가 번호 <i class="selecArrow fa-solid fa-chevron-down"></i></h3>
+                  <ul class="options notLenis">
+                    <li data-value="+233"><span>가나</span> +233</li>
+                    <li data-value="+502"><span>과테말라</span> +502</li>
+                    <li data-value="+30"><span>그리스</span> +30</li>
+                    <li data-value="+234"><span>나이지리아</span> +234</li>
+                    <li data-value="+31"><span>네덜란드</span> +31</li>
+                    <li data-value="+64"><span>뉴질랜드</span> +64</li>
+                    <li data-value="+886"><span>대만</span> +886</li>
+                    <li data-value="+82"><span>대한민국</span> +82</li>
+                    <li data-value="+45"><span>덴마크</span> +45</li>
+                    <li data-value="+49"><span>독일</span> +49</li>
+                    <li data-value="+1"><span>미국</span> +1</li>
+                    <li data-value="+41"><span>스위스</span> +41</li>
+                    <li data-value="+61"><span>호주</span> +61</li>
+                  </ul>
+                </div>
+                <label for="phonNum">
+                  <input type="number" id="phonNum" placeholder="전화번호" style="min-width: 378px" />
+                </label>
+              </fieldset>
+
               <!-- 이메일 -->
-              <label for="userEmail">
-                E-main (이메일)
-                <input type="email" id="userEmail">
-              </label>
+              <fieldset>
+                <legend>E-main (이메일)</legend>
+                <label for="userEmail">
+                  <input type="email" id="userEmail" />
+                </label>
+              </fieldset>
 
               <!-- 납품형태 -->
-              <label for="userDelivery">
-                납품형태
-                <input type="radio" id="userDelivery">
-              </label>
+              <!-- userDelivery -->
+              <fieldset id="checkbox_wrap">
+                <legend>납품형태</legend>
+                <fieldset id="checkbox_wrap">
+                  <legend>납품형태</legend>
+                  <ul class="checkList">
+                    <li>
+                      <input type="checkbox" id="fiber" />
+                      <label for="fiber">Fiber (섬유)</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="yarn" />
+                      <label for="yarn">Yarn (실)</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="sewing_yarn" />
+                      <label for="sewing_yarn">Sewing Yarn (봉제)</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="fabric" />
+                      <label for="fabric">Fabric (원단)</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="other" />
+                      <label for="other">기타</label>
+                      <input type="text" id="other_text" placeholder="직접입력" class="other-input" />
+                    </li>
+                  </ul>
+                </fieldset>
+                
+              </fieldset>
 
               <!-- 요청사함 -->
-              <label for="userRequest">
-                Request (요청사항)
-                <input type="text" id="userRequest">
-              </label>
-              
-              <!-- 전송 -->
-              <label for="userSubmit">
-                Submit
-                <input type="submit" id="userSubmit">
-              </label>
+              <fieldset>
+                <legend>Request (요청사항)</legend>
+                <label for="userRequest">
+                  <input type="text" id="userRequest" />
+                </label>
+              </fieldset>
+
+              <!-- 전송 버튼 -->
+              <input type="submit" id="userSubmit" value="Submit" />
             </form>
           </div>
         </div>

@@ -1,4 +1,7 @@
-/* visual */
+import {scrollMotion} from "./scrollMotion.js"
+scrollMotion(); // 스크롤 유도 애니메이션
+
+/* #visual */
 const visualSec = document.getElementById("visual");
 const visualCont_Ani = document.querySelectorAll(".vs_opc");
 
@@ -15,7 +18,7 @@ visualCont_Ani.forEach((visualCont) => {
   visual_tl.fromTo(visualCont, { opacity: 0, marginBottom: "-100px" }, { opacity: 1, marginBottom: "0px" });
 });
 
-/* aramidas */
+/* #aramidas */
 const aramidas_sect = document.getElementById("aramidas");
 const aramidas_slide = document.querySelector("ul.slide_list");
 const aramidas_slideList = document.querySelectorAll("ul.slide_list li");
@@ -33,3 +36,9 @@ const aramidas_tl = gsap.timeline({
 });
 
 aramidas_tl.to(aramidas_slide, { x: "-65%" });
+
+/* #inquiry */
+$("#countryCode h3").click(()=>{
+  $("#countryCode h3").toggleClass("active");
+  $("#countryCode .options").stop().slideToggle();
+})

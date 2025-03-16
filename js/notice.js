@@ -1,3 +1,5 @@
+import {scrollMotion} from "./scrollMotion.js"
+scrollMotion(); // 스크롤 유도 애니메이션
 $(document).ready(function () {
   /* ########################################## */
   /* making story pop-up */

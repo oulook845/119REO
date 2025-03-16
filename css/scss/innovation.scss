@@ -139,34 +139,180 @@ main {
       }
     }
     &#inquiry {
+      height: auto;
       background-color: #222;
       background-image: url(../../images/innovation/innovation_illust.png);
       background-repeat: no-repeat;
       background-position: center;
+      background-size: auto 42.5926vh; /* auto 460px */
       .inner {
+        padding: 9.7222vh 0; /* 105px 0 */
         #formWrap {
           width: 83.3333vw; /* 1600px */
-          height: 75vh; /* 810px */
+          height: 100%;
           background: rgba(250, 249, 246, 0.5);
           border: 2px solid #f2f0ef;
           border-radius: 10px;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
+          margin: 0 auto;
+          backdrop-filter: blur(5px);
           form {
-            padding: 50px 54px 30px 44px;
-            color:#fff;
-            label {
+            padding: 4.6296vh 5vw 2.7778vh 4.0741vw; /* 50px 54px 30px 44px */
+            color: #fff;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: space-between;
+            h2 {
+              font-size: 20px;
+              font-weight: bold;
+            }
+            fieldset {
               display: block;
-              margin-top: 25px;
-              input{
-                margin-top: 15px;
-                &[type="text"]{
+              margin-top: 2.3148vh; /* 25px */
+              legend {
+                margin-bottom: 1.3889vh; /* 15px */
+              }
+              label {
+                display: block;
+                font-size: 18px;
+              }
+              input {
+                width: auto;
+                height: 40px;
+                border: 2px solid var(--off-white);
+                text-indent: 10px;
+                &[type="text"] {
                   width: 100%;
-                  height: 40px;
-                  border: 2px solid var(--off-white);
                 }
+                &[type="email"] {
+                  width: 100%;
+                }
+                &[type="number"] {
+                  appearance: none;
+                  width: 100%;
+                }
+                &[placeholder] {
+                  width: auto;
+                  margin-left: 10px;
+                  font-size: 14px;
+                }
+                &::placeholder {
+                  color: #fff;
+                  text-indent: 20px;
+                }
+              }
+              &#user_phoneNum {
+                display: flex;
+                div#countryCode {
+                  width: 170px;
+                  height: 40px;
+                  line-height: 40px; /* 3.7037vh */
+                  font-size: 14px;
+                  color: #fff;
+                  border: 2px solid var(--off-white);
+                  background: rgba(255, 255, 255, 0.3);
+                  position: relative;
+                  h3 {
+                    width: 170px;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    line-height: 40px;
+                    padding: 0 16px;
+                    position: relative;
+                    cursor: pointer;
+                    &.active i.selecArrow {
+                      transform: rotate(180deg);
+                    }
+                    i.selecArrow {
+                      border: 1px solid var(--off-white);
+                      width: 20px;
+                      height: 20px;
+                      font-size: 12px;
+                      line-height: 18px;
+                      text-align: center;
+                      transform: rotate(0deg);
+                    }
+                  }
+                  ul.options {
+                    width: 100%;
+                    height: 240px;
+                    display: none;
+                    color: #222;
+                    background: var(--off-white);
+
+                    position: absolute;
+                    left: 0;
+                    top: 50px;
+                    z-index: 10;
+                    overflow-y: scroll;
+                    &::-webkit-scrollbar {
+                      width: 5px;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                      background: #d9d9d9;
+                      border-radius: 50px;
+                    }
+                    li {
+                      height: 30px;
+                      line-height: 30px;
+                      font-size: 10px;
+                      padding: 0 16px;
+                      &:hover {
+                        background: #d9d9d9;
+                      }
+                      span {
+                        font-weight: bold;
+                        font-size: 14px;
+                        margin-right: 10px;
+                      }
+                    }
+                  }
+                }
+              }
+              &#checkbox_wrap {
+                .checkList {
+                  li {
+                    display: flex;
+                    align-items: center;
+                    &:not(:first-child) {
+                      margin-top: 10px;
+                    }
+                    input[type="checkbox"] {
+                      appearance: none;
+                      display: block;
+                      width: 20px;
+                      height: 20px;
+                      border: 1px solid var(--off-white);
+                      border-radius: 2px;
+                      margin-right: 14px;
+                      position: relative;
+                      &:checked {
+                        background: rgba(255, 255, 255, 0.7);
+                      }
+                    }
+                    label {
+                      display: block;
+                    }
+                  }
+                }
+              }
+            }
+
+            input#userSubmit {
+              display: block;
+              color: #fff;
+              font-size: 18px;
+              font-weight: bold;
+              padding: 15px 28px;
+              background: #222;
+              border-radius: 5px;
+              margin: 0 auto;
+              margin-top: 30px;
+              cursor: pointer;
+              &:hover {
+                color: #333;
+                background: #d9d9d9;
               }
             }
           }
@@ -174,4 +320,8 @@ main {
       }
     }
   }
+}
+#visual,
+#aramidas {
+  // display: none;
 }
