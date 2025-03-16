@@ -166,10 +166,11 @@ main section#inquiry .inner #formWrap form fieldset {
 }
 main section#inquiry .inner #formWrap form fieldset legend {
   margin-bottom: 1.3889vh; /* 15px */
+  font-size: 18px;
 }
 main section#inquiry .inner #formWrap form fieldset label {
   display: block;
-  font-size: 18px;
+  font-size: 16px;
 }
 main section#inquiry .inner #formWrap form fieldset input {
   width: auto;
