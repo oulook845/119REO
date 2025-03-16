@@ -141,7 +141,7 @@ main {
     &#inquiry {
       height: auto;
       background-color: #222;
-      background-image: url(../../images/innovation/innovation_illust.png);
+      background-image: url(../images/innovation/innovation_illust.png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: auto 42.5926vh; /* auto 460px */
@@ -158,9 +158,6 @@ main {
           form {
             padding: 4.6296vh 5vw 2.7778vh 4.0741vw; /* 50px 54px 30px 44px */
             color: #fff;
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: space-between;
             h2 {
               font-size: 20px;
               font-weight: bold;
@@ -315,8 +312,4 @@ main {
       }
     }
   }
-}
-#visual,
-#aramidas {
-  // display: none;
 }
