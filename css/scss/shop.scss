@@ -1,3 +1,10 @@
+@import "./_breakPoint.scss";
+// breakpoint-1440 ;
+// breakpoint-1280 ;
+// breakpoint-1024 ;
+// breakpoint-830 ;
+// breakpoint-480 ;
+
 #header {
   background: rgba(17, 17, 17, 0.7);
 }
@@ -24,6 +31,9 @@ main {
       background-size: cover;
       position: sticky;
       top: 0;
+      @include breakPoint(1440){
+        &*{}
+      }
       &.left {
         left: 0;
         margin-right: auto;

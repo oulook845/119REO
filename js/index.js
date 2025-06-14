@@ -277,7 +277,7 @@ $(document).ready(function () {
 
   const footerElem = document.getElementById("footer");
   const footerTop = Math.floor(footerElem.offsetTop);
-  console.log(footerTop);
+  
   // 비디오 스킵 버튼
   video_skipBtn.addEventListener("click", function () {
     lenis.stop();
