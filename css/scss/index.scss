@@ -65,16 +65,19 @@ main {
             transform: translateX(0%);
           }
         }
-        p {
+        p.visual_desc {
           margin-top: 5.555555555555555vh; /* 60px */
           // color: #777;
           color: rgba(255, 255, 255, 0.2);
+          font-size: 2.7777777777777777vh; /* 30px */
+          @include breakPoint(480) {
+            font-size: 22px;
+          }
           span {
             display: block;
-            font-size: 2.7777777777777777vh; /* 30px */
+
             // line-height: 4.62962962962963vh; /* 50px */
             // margin-top: 2.7777777777777777vh; /* 30px */
-
             position: relative;
             // width: max-content;
             background: linear-gradient(to right, #fff, #fff) no-repeat;
@@ -172,6 +175,7 @@ main {
               text-align: center;
               @include breakPoint(830) {
                 width: 100vw;
+                padding: 0 1%;
                 &:first-child {
                   display: none;
                 }
@@ -183,11 +187,17 @@ main {
                   line-height: 1.5;
                   letter-spacing: 0.2083vw; /* 4px */
                   color: #fff;
+                  @include breakPoint(830) {
+                    font-size: 40px;
+                  }
                 }
                 p {
                   opacity: 1;
                   display: block;
                   // transition: opacity 3s;
+                  @include breakPoint(830) {
+                    font-size: 14px;
+                  }
                 }
               }
               h3 {
@@ -217,6 +227,7 @@ main {
 
   //* #con2_shop ****************/
   #con2_shop {
+    height: auto;
     .inner {
       width: 87.5vw; /* 1680px */
       color: #fff;
@@ -225,6 +236,11 @@ main {
         position: absolute;
         right: 2.7778vw; /* 45px */
         top: 30px;
+        @include breakPoint(830) {
+          height: 100%;
+          // top: 0;
+          opacity: 0.3;
+        }
         ul.product_list {
           display: flex;
           flex-wrap: wrap;
@@ -233,6 +249,10 @@ main {
             width: calc((42.188vw - 0.521vw) / 2); /* 400px */
             height: calc((42.188vw - 0.521vw) / 2); /* 400px */
             position: relative;
+            @include breakPoint(830) {
+              width: calc((42.188vw - 0.521vw) / 1);
+              height: calc((42.188vw - 0.521vw) / 1);
+            }
             &:hover::after {
               transition: opacity 0.75s;
               opacity: 0;
@@ -284,7 +304,9 @@ main {
             line-height: 2.25; /* 45px */
             // color: #777777;
             color: rgba(255, 255, 255, 0.2);
-
+            @include breakPoint(830) {
+              font-size: 16px;
+            }
             span {
               position: relative;
               width: max-content;
@@ -301,6 +323,9 @@ main {
             text-align: right;
             @include breakPoint(1024) {
               text-align: left;
+            }
+            @include breakPoint(830) {
+              font-size: 12px;
             }
           }
         }
