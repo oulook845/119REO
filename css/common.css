@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   scrollbar-width: none;
   color: #222;
 }
@@ -61,12 +62,43 @@ header#header nav#gnb.on {
     transform: translateX(0);
   }
 }
+@media (max-width: 830px) {
+  header#header nav#gnb {
+    width: 90%;
+    right: 50%;
+    margin-right: -45%;
+    transform: translateX(100vw);
+  }
+}
+@media (max-width: 480px) {
+  header#header nav#gnb {
+    padding-left: 12vw;
+    padding-right: 12vw;
+  }
+}
 header#header nav#gnb ul.menu li {
   width: fit-content;
   font-size: 6.4814814815vh; /* 70px */
 }
 header#header nav#gnb ul.menu li:not(:last-child) {
   margin-bottom: 4.1666666667vh; /* 45px */
+}
+@media (max-width: 830px) {
+  header#header nav#gnb ul.menu li {
+    font-size: 50px;
+  }
+  header#header nav#gnb ul.menu li:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+}
+@media (max-width: 480px) {
+  header#header nav#gnb ul.menu li {
+    width: 100%;
+    font-size: 8vw;
+  }
+  header#header nav#gnb ul.menu li:not(:last-child) {
+    margin-bottom: 2vw;
+  }
 }
 header#header nav#gnb ul.menu li a {
   width: 100%;
@@ -84,6 +116,15 @@ header#header nav#gnb ul.menu li a::after {
 }
 header#header nav#gnb ul.menu li a:hover::after {
   width: 100%;
+}
+@media (max-width: 480px) {
+  header#header nav#gnb ul.menu li a {
+    width: 100%;
+    line-height: 2.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 header#header nav#gnb p.desc {
   line-height: 2.7777777778vh; /* 30px */
@@ -123,6 +164,12 @@ header#header button#header_menu {
   transition: 0.5s;
   pointer-events: all;
 }
+@media (max-width: 1024px) {
+  header#header button#header_menu {
+    width: auto;
+    height: auto;
+  }
+}
 header#header button#header_menu a {
   display: block;
   line-height: 2.0833333333vw; /* 40px */
@@ -131,6 +178,12 @@ header#header button#header_menu a {
   border: 2px solid #fff;
   border-radius: 999px;
   color: #fff;
+}
+@media (max-width: 1024px) {
+  header#header button#header_menu a {
+    padding: 7px 15px;
+    font-size: 14px;
+  }
 }
 
 footer#footer {

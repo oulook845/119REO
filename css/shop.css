@@ -26,6 +26,11 @@ main section .stickyBg {
   position: sticky;
   top: 0;
 }
+@media (max-width: 1280px) {
+  main section .stickyBg {
+    width: 100%;
+  }
+}
 main section .stickyBg.left {
   left: 0;
   margin-right: auto;
@@ -52,8 +57,23 @@ main section .inner .product_wrap.left {
 main section .inner .product_wrap.right {
   right: 80px;
 }
+@media (max-width: 1280px) {
+  main section .inner .product_wrap {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  main section .inner .product_wrap.left, main section .inner .product_wrap.right {
+    left: 0;
+    right: 0;
+  }
+}
 main section .inner .product_wrap article:not(:first-of-type) {
   margin-top: 100px;
+}
+@media (max-width: 830px) {
+  main section .inner .product_wrap article:not(:first-of-type) {
+    margin-top: 20%;
+  }
 }
 main section .inner .product_wrap article h2.product_title {
   color: #fff;
@@ -70,13 +90,28 @@ main section .inner .product_wrap article ul.product_list {
   background: #fff;
   border-radius: 20px;
 }
+@media (max-width: 830px) {
+  main section .inner .product_wrap article ul.product_list {
+    justify-content: space-between;
+  }
+}
 main section .inner .product_wrap article ul.product_list li {
   width: calc((100% - 40px) / 3);
+}
+@media (max-width: 830px) {
+  main section .inner .product_wrap article ul.product_list li {
+    width: calc((100% - 40px) / 2);
+  }
 }
 main section .inner .product_wrap article ul.product_list li figure img {
   width: 300px;
   height: 300px;
   object-fit: cover;
+}
+@media (max-width: 1280px) {
+  main section .inner .product_wrap article ul.product_list li figure img {
+    height: auto;
+  }
 }
 main section .inner .product_wrap article ul.product_list li figure figcaption {
   margin-top: 20px;
@@ -88,9 +123,27 @@ main section .inner .product_wrap article ul.product_list li figure figcaption p
   font-size: 16px;
   margin-bottom: 12px;
 }
+@media (max-width: 830px) {
+  main section .inner .product_wrap article ul.product_list li figure figcaption p.product_name {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (max-width: 480px) {
+  main section .inner .product_wrap article ul.product_list li figure figcaption p.product_name {
+    font-size: 12px;
+  }
+}
 main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price {
   font-size: 14px;
   font-weight: 800;
+}
+@media (max-width: 830px) {
+  main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price {
+    font-size: 10px;
+  }
 }
 main section .inner .product_wrap article ul.product_list li figure figcaption p.product_price del {
   font-size: 10px;

@@ -31,8 +31,8 @@ main {
       background-size: cover;
       position: sticky;
       top: 0;
-      @include breakPoint(1440){
-        &*{}
+      @include breakPoint(1280) {
+        width: 100%;
       }
       &.left {
         left: 0;
@@ -60,9 +60,23 @@ main {
         &.right {
           right: 80px;
         }
+        @include breakPoint(1280) {
+          &.left,
+          &.right {
+            left: 0;
+            right: 0;
+          }
+          width: 80vw;
+          margin: 0 auto;
+        }
         article {
           &:not(:first-of-type) {
             margin-top: 100px;
+          }
+          @include breakPoint(830) {
+            &:not(:first-of-type) {
+              margin-top: 20%;
+            }
           }
           h2.product_title {
             color: #fff;
@@ -78,13 +92,22 @@ main {
             row-gap: 45px;
             background: #fff;
             border-radius: 20px;
+            @include breakPoint(830) {
+              justify-content: space-between;
+            }
             li {
               width: calc((100% - 40px) / 3);
+              @include breakPoint(830) {
+                width: calc((100% - 40px) / 2);
+              }
               figure {
                 img {
                   width: 300px;
                   height: 300px;
                   object-fit: cover;
+                  @include breakPoint(1280) {
+                    height: auto;
+                  }
                 }
                 figcaption {
                   margin-top: 20px;
@@ -93,10 +116,23 @@ main {
                     &.product_name {
                       font-size: 16px;
                       margin-bottom: 12px;
+                      @include breakPoint(830) {
+                        font-size: 14px;
+
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                      }
+                      @include breakPoint(480) {
+                        font-size: 12px;
+                      }
                     }
                     &.product_price {
                       font-size: 14px;
                       font-weight: 800;
+                      @include breakPoint(830) {
+                        font-size: 10px;
+                      }
                       del {
                         font-size: 10px;
                         font-weight: 900;

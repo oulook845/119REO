@@ -1,6 +1,9 @@
-html, body{
+@import "./_breakPoint.scss";
+
+html,
+body {
   scrollbar-width: none;
-  color:#222;
+  color: #222;
 }
 
 header#header {
@@ -13,11 +16,11 @@ header#header {
   position: fixed;
   left: 0;
   top: 0;
-  z-index:9999;
-  pointer-events:none;
+  z-index: 9999;
+  pointer-events: none;
   h1#logo {
     width: 100px;
-    pointer-events:all;
+    pointer-events: all;
     a {
       display: block;
       width: 100%;
@@ -33,7 +36,7 @@ header#header {
     justify-content: space-between;
     border-radius: 50px;
     margin-top: calc((100vh - 40px) / -2);
-    padding: 8.61111111111111vh 6.7592592592592595vh 10.37037037037037vh ; /* 93px 73px 112px */
+    padding: 8.61111111111111vh 6.7592592592592595vh 10.37037037037037vh; /* 93px 73px 112px */
     background-color: rgba(255, 255, 255, 0.9);
     position: fixed;
     right: 19px;
@@ -41,54 +44,84 @@ header#header {
     transform: translateX(calc(100% + 19px));
     transition: transform 0.75s ease-in-out;
     pointer-events: all;
-    &.on{
-        transition: transform 0s;
-        transform: translateX(0);
-        animation : gnbMove 0.75s ease-in-out;
+    &.on {
+      transition: transform 0s;
+      transform: translateX(0);
+      animation: gnbMove 0.75s ease-in-out;
     }
-    @keyframes gnbMove{
-        0%{
-            transform: translateX(calc(100% + 19px));
-        }
-        60%{
-            transform: translateX(-5px);
-        }
-        80%{
-            transform: translateX(5px);
-        }
-        100%{
-            transform: translateX(0);
-        }
+    @keyframes gnbMove {
+      0% {
+        transform: translateX(calc(100% + 19px));
+      }
+      60% {
+        transform: translateX(-5px);
+      }
+      80% {
+        transform: translateX(5px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    @include breakPoint(830) {
+      width: 90%;
+      right: 50%;
+      margin-right: -45%;
+      transform: translateX(calc(100vw));
+    }
+    @include breakPoint(480){
+      padding-left: 12vw;
+      padding-right: 12vw;
     }
     ul.menu {
       li {
         width: fit-content;
         font-size: 6.481481481481481vh; /* 70px */
-        &:not(:last-child){
-            margin-bottom: 4.166666666666666vh; /* 45px */
+        &:not(:last-child) {
+          margin-bottom: 4.166666666666666vh; /* 45px */
         }
-        a{
-            width: 100%;
-            height:100%;
-            line-height: 7.4074074074074066vh; /* 80px */
+        @include breakPoint(830) {
+          font-size: 50px;
+          &:not(:last-child) {
+            margin-bottom: 0.5em;
+          }
+        }
+        @include breakPoint(480) {
+          width: 100%;
+          font-size: 8vw;
+          &:not(:last-child) {
+            margin-bottom: 2vw;
+          }
+        }
+        a {
+          width: 100%;
+          height: 100%;
+          line-height: 7.4074074074074066vh; /* 80px */
+          display: block;
+          &::after {
+            content: "";
             display: block;
-            &::after {
-              content: "";
-              display: block;
-              width: 0;
-              height: 2px;
-              background-color: #222;
-              transition: 0.5s;
-            }
-            &:hover::after {
-              width: 100%;
-            }
+            width: 0;
+            height: 2px;
+            background-color: #222;
+            transition: 0.5s;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+          @include breakPoint(480) {
+            width: 100%;
+            line-height: 2.25;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
         }
       }
     }
     p.desc {
-        line-height: 2.7777777777777777vh; /* 30px */
-        font-size: 1.6666666666666667vh; /* 18px */
+      line-height: 2.7777777777777777vh; /* 30px */
+      font-size: 1.6666666666666667vh; /* 18px */
     }
     button.gnb_closeBtn {
       width: 4.62962962962963vh; /* 50px */
@@ -99,21 +132,22 @@ header#header {
       position: absolute;
       right: 25px;
       top: 20px;
-      &::before, &::after {
-          content: "";
-          width: 2.037037037037037vh; /* 22px */
-          height: 0.1851851851851852vh; /* 2px */
-          display: block;
-          margin-left: -1.0185185185185186vh; /* -11px */
-          margin-top: -0.0925925925925926vh; /* -1px */
-          background-color: #1d1b20;
-          position: absolute;
-          left: 50%;
-          top: 50%;
+      &::before,
+      &::after {
+        content: "";
+        width: 2.037037037037037vh; /* 22px */
+        height: 0.1851851851851852vh; /* 2px */
+        display: block;
+        margin-left: -1.0185185185185186vh; /* -11px */
+        margin-top: -0.0925925925925926vh; /* -1px */
+        background-color: #1d1b20;
+        position: absolute;
+        left: 50%;
+        top: 50%;
       }
       &::before {
-          transform: rotate(45deg);
-        }
+        transform: rotate(45deg);
+      }
       &::after {
         transform: rotate(-45deg);
       }
@@ -122,8 +156,12 @@ header#header {
   button#header_menu {
     width: 5.208333333333334vw; /* 100px */
     height: 2.083333333333333vw; /* 40px */
-    transition : 0.5s;
-    pointer-events:all;
+    transition: 0.5s;
+    pointer-events: all;
+    @include breakPoint(1024) {
+      width: auto;
+      height: auto;
+    }
     a {
       display: block;
       line-height: 2.083333333333333vw; /* 40px */
@@ -132,6 +170,10 @@ header#header {
       border: 2px solid #fff;
       border-radius: 999px;
       color: #fff;
+      @include breakPoint(1024) {
+        padding: 7px 15px;
+        font-size: 14px;
+      }
     }
   }
 }
@@ -139,47 +181,47 @@ header#header {
 footer#footer {
   width: 100%;
   height: 250px;
-  color:#fff;
+  color: #fff;
   background: #222;
-  .inner{
+  .inner {
     width: 100%;
     max-width: 83.3333vw; /* 1600px */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    ul.fotNav{
+    ul.fotNav {
       display: flex;
-      gap:20px;
+      gap: 20px;
       margin-bottom: 30px;
-      li{
+      li {
         font-size: 12px;
         font-weight: 800;
-        color:#fff;
+        color: #fff;
       }
     }
-    ul.fotInfo{
+    ul.fotInfo {
       display: flex;
-      gap:20px;
+      gap: 20px;
       margin-bottom: 20px;
-      li{
+      li {
         font-size: 12px;
-        color:#fff;
+        color: #fff;
       }
     }
-    b.fotTitle{
+    b.fotTitle {
       display: block;
       font-size: 12px;
       font-weight: 400;
       margin-bottom: 20px;
-      color:#fff;
+      color: #fff;
     }
-    address{
+    address {
       font-size: 12px;
       line-height: 20px;
-      span{
+      span {
         display: block;
-        color:#fff;
+        color: #fff;
       }
     }
   }
