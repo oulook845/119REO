@@ -35,6 +35,7 @@ $(document).ready(function () {
       start: "top center",
       end: "center center",
       toggleActions: "play none none reverse",
+      // markers:true,
     },
   });
 

@@ -1,3 +1,10 @@
+@import "./_breakPoint.scss";
+// breakpoint-1440 ;
+// breakpoint-1280 ;
+// breakpoint-1024 ;
+// breakpoint-830 ;
+// breakpoint-480 ;
+
 #header {
   background: rgba(17, 17, 17, 0.7);
 }
@@ -50,10 +57,14 @@ main {
           top: 50%;
           transform: translate(-50%, -50%);
           text-align: center;
+          @include breakPoint(430){
+            width: 70%;
+          }
           h2 {
             height: 16.2037vh; /* 175px */
             img {
               height: 100%;
+              object-fit: contain;
             }
           }
           p.txt {
@@ -77,9 +88,15 @@ main {
         position: sticky;
         left: 0;
         top: 0;
+        @include breakPoint(430){
+          padding-left: 30px;
+        }
         .content {
           width: 100%;
           display: flex;
+          @include breakPoint(1024) {
+            flex-direction: column;
+          }
           .content_title {
             width: fit-content;
             h2 {
@@ -91,6 +108,11 @@ main {
               margin-top: 6.4815vh; /* 70px */
               font-size: 1.8519vh; /* 20px */
               line-height: 1.5;
+            }
+            figure {
+              @include breakPoint(1024) {
+                display: none;
+              }
             }
             img {
               //   height: 38.8889vh; /* 420px */
@@ -104,6 +126,12 @@ main {
 
             position: relative;
             overflow: hidden;
+            @include breakPoint(1024) {
+              flex: auto;
+              height: 400px;
+              margin: 0;
+              margin-top: 50px;
+            }
             ul.slide_list {
               height: 400px;
               display: flex;
@@ -172,6 +200,9 @@ main {
               label {
                 display: block;
                 font-size: 16px;
+                @include breakPoint(830) {
+                  width: 100%;
+                }
               }
               input {
                 width: auto;
@@ -196,6 +227,15 @@ main {
                   color: #fff;
                   text-indent: 20px;
                 }
+                &#phonNum {
+                  min-width: 378px;
+                  width: calc(100% - 10px);
+                }
+                @include breakPoint(830){
+                  &#phonNum {
+                    min-width: auto;
+                  }
+                }
               }
               &#user_phoneNum {
                 display: flex;
@@ -208,6 +248,9 @@ main {
                   border: 2px solid var(--off-white);
                   background: rgba(255, 255, 255, 0.3);
                   position: relative;
+                  @include breakPoint(430){
+                    width: 30%;
+                  }
                   h3 {
                     width: 170px;
                     height: 100%;

@@ -54,11 +54,17 @@ main section#visual .inner .content {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+@media (max-width: 430px) {
+  main section#visual .inner .content {
+    width: 70%;
+  }
+}
 main section#visual .inner .content h2 {
   height: 16.2037vh; /* 175px */
 }
 main section#visual .inner .content h2 img {
   height: 100%;
+  object-fit: contain;
 }
 main section#visual .inner .content p.txt {
   color: #fff;
@@ -78,9 +84,19 @@ main section#aramidas .inner {
   left: 0;
   top: 0;
 }
+@media (max-width: 430px) {
+  main section#aramidas .inner {
+    padding-left: 30px;
+  }
+}
 main section#aramidas .inner .content {
   width: 100%;
   display: flex;
+}
+@media (max-width: 1024px) {
+  main section#aramidas .inner .content {
+    flex-direction: column;
+  }
 }
 main section#aramidas .inner .content .content_title {
   width: fit-content;
@@ -95,6 +111,11 @@ main section#aramidas .inner .content .content_title p {
   font-size: 1.8519vh; /* 20px */
   line-height: 1.5;
 }
+@media (max-width: 1024px) {
+  main section#aramidas .inner .content .content_title figure {
+    display: none;
+  }
+}
 main section#aramidas .inner .content .content_title img {
   margin-top: 2.7778vh; /* 30px */
   object-fit: cover;
@@ -104,6 +125,14 @@ main section#aramidas .inner .content div.slideWrap {
   margin-left: 11.6667vw; /* 240px */
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 1024px) {
+  main section#aramidas .inner .content div.slideWrap {
+    flex: auto;
+    height: 400px;
+    margin: 0;
+    margin-top: 50px;
+  }
 }
 main section#aramidas .inner .content div.slideWrap ul.slide_list {
   height: 400px;
@@ -172,6 +201,11 @@ main section#inquiry .inner #formWrap form fieldset label {
   display: block;
   font-size: 16px;
 }
+@media (max-width: 830px) {
+  main section#inquiry .inner #formWrap form fieldset label {
+    width: 100%;
+  }
+}
 main section#inquiry .inner #formWrap form fieldset input {
   width: auto;
   height: 40px;
@@ -196,6 +230,15 @@ main section#inquiry .inner #formWrap form fieldset input::placeholder {
   color: #fff;
   text-indent: 20px;
 }
+main section#inquiry .inner #formWrap form fieldset input#phonNum {
+  min-width: 378px;
+  width: calc(100% - 10px);
+}
+@media (max-width: 830px) {
+  main section#inquiry .inner #formWrap form fieldset input#phonNum {
+    min-width: auto;
+  }
+}
 main section#inquiry .inner #formWrap form fieldset#user_phoneNum {
   display: flex;
 }
@@ -208,6 +251,11 @@ main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCod
   border: 2px solid var(--off-white);
   background: rgba(255, 255, 255, 0.3);
   position: relative;
+}
+@media (max-width: 430px) {
+  main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode {
+    width: 30%;
+  }
 }
 main section#inquiry .inner #formWrap form fieldset#user_phoneNum div#countryCode h3 {
   width: 170px;
