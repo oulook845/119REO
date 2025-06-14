@@ -17,6 +17,7 @@ main section#makingStory .inner {
   position: sticky;
   left: 0;
   top: 0;
+  overflow-x: hidden;
 }
 main section#makingStory .inner div#textContent {
   width: 100%;
@@ -27,6 +28,18 @@ main section#makingStory .inner div#textContent {
   position: absolute;
   left: 0;
   top: 0;
+}
+@media (max-width: 1024px) {
+  main section#makingStory .inner div#textContent {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 830px) {
+  main section#makingStory .inner div#textContent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 main section#makingStory .inner div#textContent p {
   color: #fff;
@@ -42,15 +55,35 @@ main section#makingStory .inner div#textContent p#making {
   grid-row: 2;
   justify-self: end;
 }
+@media (max-width: 830px) {
+  main section#makingStory .inner div#textContent p#making {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+  }
+}
 main section#makingStory .inner div#textContent p#story {
   grid-column: 3;
   grid-row: 2;
   justify-self: center;
 }
+@media (max-width: 830px) {
+  main section#makingStory .inner div#textContent p#story {
+    grid-column: 2;
+    grid-row: 4;
+    justify-self: start;
+  }
+}
 main section#makingStory .inner div#textContent p#popUp {
   grid-column: 2;
   grid-row: 3;
   justify-self: start;
+}
+@media (max-width: 830px) {
+  main section#makingStory .inner div#textContent p#popUp {
+    grid-column: 1;
+    grid-row: 5;
+  }
 }
 main section#makingStory .inner ul#story_list {
   width: 100%;
@@ -58,6 +91,11 @@ main section#makingStory .inner ul#story_list {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+}
+@media (max-width: 830px) {
+  main section#makingStory .inner ul#story_list {
+    flex-direction: column;
+  }
 }
 main section#makingStory .inner ul#story_list li.bgImg {
   width: 25%;
@@ -76,6 +114,40 @@ main section#makingStory .inner ul#story_list li.bgImg {
 main section#makingStory .inner ul#story_list li.bgImg:nth-child(3), main section#makingStory .inner ul#story_list li.bgImg:nth-child(4) {
   margin: 0;
   margin-left: 25%;
+}
+@media (max-width: 1024px) {
+  main section#makingStory .inner ul#story_list li.bgImg {
+    width: 33.3333333333%;
+    height: 25%;
+    margin-right: 0;
+  }
+  main section#makingStory .inner ul#story_list li.bgImg:nth-child(3), main section#makingStory .inner ul#story_list li.bgImg:nth-child(4) {
+    margin-left: 0;
+  }
+  main section#makingStory .inner ul#story_list li.bgImg:nth-child(2), main section#makingStory .inner ul#story_list li.bgImg:nth-child(3), main section#makingStory .inner ul#story_list li.bgImg:nth-child(5), main section#makingStory .inner ul#story_list li.bgImg:nth-child(6) {
+    margin-left: 33.3333333333%;
+  }
+  main section#makingStory .inner ul#story_list li.bgImg:nth-child(3) {
+    margin-right: 33.3333333333%;
+  }
+}
+@media (max-width: 830px) {
+  main section#makingStory .inner ul#story_list li.bgImg {
+    width: 50%;
+    height: 16.6666666667%;
+  }
+  main section#makingStory .inner ul#story_list li.bgImg:nth-child(even), main section#makingStory .inner ul#story_list li.bgImg:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  main section#makingStory .inner ul#story_list li.bgImg:nth-child(odd) {
+    margin-left: auto;
+  }
+}
+@media (max-width: 480px) {
+  main section#makingStory .inner ul#story_list li.bgImg {
+    font-size: 12px;
+  }
 }
 main section#makingStory .inner ul#story_list li.bgImg::after {
   content: "";
@@ -117,6 +189,23 @@ main section#makingStory .inner .desc {
   right: 0px;
   bottom: 47px;
 }
+@media (max-width: 1024px) {
+  main section#makingStory .inner .desc {
+    width: 33.3333333333%;
+  }
+}
+@media (max-width: 830px) {
+  main section#makingStory .inner .desc {
+    width: 50%;
+    bottom: 20px;
+    right: 0;
+  }
+}
+@media (max-width: 480px) {
+  main section#makingStory .inner .desc {
+    font-size: 12px;
+  }
+}
 main section#makingStory .inner .desc p.desc_txt {
   line-height: 24px;
   margin-bottom: 11px;
@@ -149,6 +238,20 @@ main section#donation .inner h2.title {
   user-select: none;
   pointer-events: none;
 }
+@media (max-width: 830px) {
+  main section#donation .inner h2.title {
+    height: 210px;
+    line-height: 210px;
+    font-size: 15vw;
+  }
+}
+@media (max-width: 480px) {
+  main section#donation .inner h2.title {
+    height: auto;
+    line-height: 2;
+    font-size: 15vw;
+  }
+}
 main section#donation .inner h2.title span {
   font-family: "Times New Roman", Times, serif;
 }
@@ -156,6 +259,23 @@ main section#donation .inner ul#donationList {
   width: 73.9583vw; /* 1420px */
   margin: 0 auto;
   padding-bottom: 18.5185vh; /* 200px */
+}
+@media (max-width: 1280px) {
+  main section#donation .inner ul#donationList {
+    width: 900px;
+  }
+}
+@media (max-width: 1024px) {
+  main section#donation .inner ul#donationList {
+    width: 800px;
+  }
+}
+@media (max-width: 830px) {
+  main section#donation .inner ul#donationList {
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
 }
 main section#donation .inner ul#donationList li {
   opacity: 0;
@@ -167,15 +287,30 @@ main section#donation .inner ul#donationList li:nth-child(even) figure {
 main section#donation .inner ul#donationList li:not(:first-child) {
   margin-top: -45px;
 }
+@media (max-width: 1024px) {
+  main section#donation .inner ul#donationList li:not(:first-child) {
+    margin-top: 45px;
+  }
+}
 main section#donation .inner ul#donationList li figure {
   width: fit-content;
   pointer-events: all;
+}
+@media (max-width: 830px) {
+  main section#donation .inner ul#donationList li figure {
+    width: 100%;
+  }
 }
 main section#donation .inner ul#donationList li figure:hover img {
   opacity: 1;
 }
 main section#donation .inner ul#donationList li figure img {
   opacity: 0.8;
+}
+@media (max-width: 830px) {
+  main section#donation .inner ul#donationList li figure img {
+    width: 100%;
+  }
 }
 main section#donation .inner ul#donationList li figure figcaption {
   margin-top: 20px;

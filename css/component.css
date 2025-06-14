@@ -125,3 +125,16 @@
   position: relative;
   z-index: 1;
 }
+
+
+/* ############# 미디어 쿼리 ############# */
+@media (max-width: 1024px) {
+  #topBtn{
+    padding: calc(70px / 2); /* 70px */
+  }
+}
+@media (max-width: 430px) {
+  #topBtn{
+    display: none;
+  }
+}
