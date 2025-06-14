@@ -11,6 +11,8 @@ $(document).ready(function () {
   /* ########################### */
   /* section 공통 script*/
   /* ########################### */
+  let deviceSize = window.outerWidth;
+
 
   // 모든 section의 위치를 객체로 저장
   const elements = ["visual", "con1_3r", "con2_shop", "con3_makingFilm"]; // 추가시 저장하고 싶은 이름으로 설정(이름보다 순서가 중요)
@@ -85,14 +87,16 @@ $(document).ready(function () {
     },
   });
 
-  visualTl.to(visualTitle, {
-    fontSize: 30,
-    padding: 0,
-    margin: 0,
-    x: 0,
-    duration: 3,
-    ease: "power1.inOut" /* 선형에 가까운 부드러운 효과 */,
-  });
+  if(deviceSize >= 830){
+    visualTl.to(visualTitle, {
+      fontSize: 30,
+      padding: 0,
+      margin: 0,
+      x: 0,
+      duration: 3,
+      ease: "power1.inOut" /* 선형에 가까운 부드러운 효과 */,
+    });
+  }
 
   visualDescSpans.forEach((span, index) => {
     visualTl.to(span, {
@@ -125,7 +129,7 @@ $(document).ready(function () {
   const con1_3r = document.querySelector("#con1_3r");
   const con1_3r_top = con1_3r.offsetTop;
   const slider = document.querySelector(".desc_list");
-  const sliderLi = document.querySelector(".desc_list li").offsetWidth;
+  const sliderLi = document.querySelector(".desc_list li:last-child").offsetWidth;
   const con1_nextSlide = Math.floor(con1_3r.getBoundingClientRect().height / 3.5);
 
   function con1_classList() {

@@ -35,6 +35,17 @@ main #visual .inner div.intro_txt {
   position: sticky;
   left: 0;
   top: 41.1111111111vh; /* 444px */
+  overflow-x: hidden;
+}
+@media (max-width: 830px) {
+  main #visual .inner div.intro_txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+    padding: 10%;
+    top: 0%;
+  }
 }
 main #visual .inner div.intro_txt h2.visual_title {
   width: fit-content;
@@ -44,6 +55,14 @@ main #visual .inner div.intro_txt h2.visual_title {
   padding-top: 25vh; /* 240px */
   transform: translateX(10%);
 }
+@media (max-width: 830px) {
+  main #visual .inner div.intro_txt h2.visual_title {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    transform: translateX(0%);
+  }
+}
 main #visual .inner div.intro_txt p {
   margin-top: 5.5555555556vh; /* 60px */
   color: rgba(255, 255, 255, 0.2);
@@ -52,7 +71,6 @@ main #visual .inner div.intro_txt p span {
   display: block;
   font-size: 2.7777777778vh; /* 30px */
   position: relative;
-  width: max-content;
   background: linear-gradient(to right, #fff, #fff) no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
@@ -144,6 +162,14 @@ main #con1_3r .outer .inner .desc_wrap ul.desc_list li {
   justify-content: center;
   text-align: center;
 }
+@media (max-width: 830px) {
+  main #con1_3r .outer .inner .desc_wrap ul.desc_list li {
+    width: 100vw;
+  }
+  main #con1_3r .outer .inner .desc_wrap ul.desc_list li:first-child {
+    display: none;
+  }
+}
 main #con1_3r .outer .inner .desc_wrap ul.desc_list li.on h3 {
   font-family: "JalnanGothic";
   font-size: 3.125vw; /* 60px */
@@ -232,6 +258,14 @@ main #con2_shop .inner .txt_wrap .desc_wrap {
   left: 0;
   top: 39.259vh;
 }
+@media (max-width: 1024px) {
+  main #con2_shop .inner .txt_wrap .desc_wrap {
+    height: auto;
+    gap: 70px;
+    top: auto;
+    bottom: 10%;
+  }
+}
 main #con2_shop .inner .txt_wrap .desc_wrap .desc_kor {
   font-size: 20px;
   line-height: 2.25; /* 45px */
@@ -251,10 +285,20 @@ main #con2_shop .inner .txt_wrap .desc_wrap .desc_eng {
   line-height: 1.75; /* 30px */
   text-align: right;
 }
+@media (max-width: 1024px) {
+  main #con2_shop .inner .txt_wrap .desc_wrap .desc_eng {
+    text-align: left;
+  }
+}
 main #con2_shop .inner .txt_wrap .shop_category {
   position: absolute;
   left: 0;
   top: 74vh;
+}
+@media (max-width: 1024px) {
+  main #con2_shop .inner .txt_wrap .shop_category {
+    top: 20%;
+  }
 }
 main #con2_shop .inner .txt_wrap .shop_category .shopCtg_wrap {
   width: 250px;
@@ -272,6 +316,11 @@ main #con2_shop .inner .txt_wrap .shop_category .shopCtg_wrap ul.shopCtg_list {
 main #con2_shop .inner .txt_wrap .shop_category h2 {
   font-size: 80px;
   font-family: "JalnanGothic";
+}
+@media (max-width: 830px) {
+  main #con3_makingFilm {
+    display: none;
+  }
 }
 main #con3_makingFilm .inner {
   position: relative;

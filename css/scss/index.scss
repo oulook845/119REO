@@ -6,9 +6,9 @@
 // breakpoint-480 ;
 
 main {
-  section{
-    width:100%;
-    height:100vh;
+  section {
+    width: 100%;
+    height: 100vh;
     position: relative;
     background: #111;
   }
@@ -41,6 +41,15 @@ main {
         position: sticky;
         left: 0;
         top: 41.11111111111111vh; /* 444px */
+        overflow-x: hidden;
+        @include breakPoint(830) {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          height: 100vh;
+          padding: 10%;
+          top: 0%;
+        }
         h2.visual_title {
           width: fit-content;
           font-family: "JalnanGothic";
@@ -49,6 +58,12 @@ main {
           margin-left: auto; /* 300px */
           padding-top: 25vh; /* 240px */
           transform: translateX(10%);
+          @include breakPoint(830) {
+            font-size: 30px;
+            margin: 0;
+            padding: 0;
+            transform: translateX(0%);
+          }
         }
         p {
           margin-top: 5.555555555555555vh; /* 60px */
@@ -61,7 +76,7 @@ main {
             // margin-top: 2.7777777777777777vh; /* 30px */
 
             position: relative;
-            width: max-content;
+            // width: max-content;
             background: linear-gradient(to right, #fff, #fff) no-repeat;
             -webkit-background-clip: text;
             background-clip: text;
@@ -77,12 +92,12 @@ main {
   #con1_3r {
     width: 100%;
     height: 600vh;
-    .outer{
+    .outer {
       width: 100%;
-      height:100vh;
+      height: 100vh;
       position: sticky;
-      left:0;
-      top:0;
+      left: 0;
+      top: 0;
       overflow: hidden;
       .bg_img {
         width: 100%;
@@ -101,7 +116,7 @@ main {
           background: radial-gradient(circle, #555 0%, #000 50%);
           opacity: 0.5;
         }
-  
+
         ul {
           width: 100%;
           height: 100%;
@@ -155,10 +170,16 @@ main {
               flex-direction: column;
               justify-content: center;
               text-align: center;
+              @include breakPoint(830) {
+                width: 100vw;
+                &:first-child {
+                  display: none;
+                }
+              }
               &.on {
                 h3 {
                   font-family: "JalnanGothic";
-                  font-size: 3.1250vw; /* 60px */
+                  font-size: 3.125vw; /* 60px */
                   line-height: 1.5;
                   letter-spacing: 0.2083vw; /* 4px */
                   color: #fff;
@@ -177,7 +198,7 @@ main {
               }
               p {
                 width: fit-content; /* 560px */
-                font-size:  18px; /* 0.9375vw */
+                font-size: 18px; /* 0.9375vw */
                 line-height: 1.9; /* 35px */
                 margin: 0 auto;
                 margin-top: 1.5625vw; /* 30px */
@@ -252,6 +273,12 @@ main {
           position: absolute;
           left: 0;
           top: 39.259vh;
+          @include breakPoint(1024) {
+            height: auto;
+            gap: 70px;
+            top: auto;
+            bottom: 10%;
+          }
           .desc_kor {
             font-size: 20px;
             line-height: 2.25; /* 45px */
@@ -272,12 +299,18 @@ main {
             font-size: 18px;
             line-height: 1.75; /* 30px */
             text-align: right;
+            @include breakPoint(1024) {
+              text-align: left;
+            }
           }
         }
         .shop_category {
           position: absolute;
           left: 0;
           top: 74vh;
+          @include breakPoint(1024) {
+            top: 20%;
+          }
           .shopCtg_wrap {
             width: 250px;
             height: 45px;
@@ -303,6 +336,9 @@ main {
 
   //* #con3_makingFilm ****************/
   #con3_makingFilm {
+    @include breakPoint(830) {
+      display: none;
+    }
     .inner {
       position: relative;
       #bound-one {
@@ -333,15 +369,15 @@ main {
           transition: opacity 0.75s;
         }
       }
-      button#video_skip{
+      button#video_skip {
         width: 50px;
-        color:#fff;
+        color: #fff;
         text-align: center;
         font-weight: 900;
         letter-spacing: 1px;
         position: absolute;
-        left:50%;
-        bottom:20px;
+        left: 50%;
+        bottom: 20px;
         margin-left: -20px;
         mix-blend-mode: difference;
         cursor: pointer;
