@@ -17,7 +17,7 @@ main section#makingStory .inner {
   position: sticky;
   left: 0;
   top: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 main section#makingStory .inner div#textContent {
   width: 100%;
